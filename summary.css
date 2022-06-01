@@ -1,0 +1,51 @@
+.headers {
+    text-align: center;
+}
+.white {
+    margin: auto;
+    margin-top: 10px;
+}
+.main_stuff {
+    border: solid 5px rgba(0, 0, 0, 0.884);
+    background-color: rgb(199, 169, 199);
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    margin-top: 50px;
+}
+.main_stuff .Drop-Down_Box {
+    font-weight: bold;
+    height: 40px;
+    font-size: 16px;
+
+}
+
+.main_stuff .source {
+    border: solid 2px rgba(0, 0, 0, 0.884);
+    background-color: aliceblue;
+    text-align: center;
+    width: 65%;
+    margin-top:20px;
+    margin-bottom:20px;
+    margin: auto;
+}
+
+.main_stuff .button_class {
+    border: 4px solid rgb(0, 0, 0);
+    background-color: rgb(252, 182, 182);
+    font-weight: bold;
+    width: 250px;
+    height: 30px;
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.results_class {
+    border: solid 3px rgba(0, 0, 0, 0.884);
+    background-color: rgba(168, 190, 250, 0.884);
+    text-align: center;
+    width: 65%;
+    margin-top: 20px;
+    margin:auto;
+}

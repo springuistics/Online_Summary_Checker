@@ -1,16 +1,41 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <link href="summary.css" rel="stylesheet" type="text/css">
 </head>
 <body onload="Initialize()">
+    <div class="headers">
+        <h1>Pathways to Academic English Practice</h1>
+        <h2>Practice Summarizing:</h2>
+    </div>
+    <br>
+    <div class="main_stuff">
+        <div class="Drop-Down_Box">
+            <label for="passage_select">Select passage:</label>
+            <br>
+            <select id="passage_select" onchange="GetPassage()">
+                <option value="default">Select Passage</option>
+                <option value="Passage1">Worksheet Passage 1: Horses</option>
+                <option value="Passage2">Worksheet Passage 2: Intermodal Containers</option>
+                <option value="Custom">Enter My Own Text</option>
+            </select>
+        </div>
+        <br>
+        <div class="source" id="source_id">
+        <p style="text-align:left; font-size: 14px" id="source_text">Put words here.</p>
+        <br>
+        </div>
+        <br>
+        <textarea id="summary_text" rows="20" cols="70" placeholder="write summary here"></textarea>
+        <br>
+        <button class="button_class" id="check_button" onclick="Check_Now()">Check Your Summary</button>
+        <br>
+    </div>
+    <div class="white"></div>
+    <div class="results_class">
+    <p id="results_text">Advice for your summary:</p>
+    </div>
     <script type="text/javascript" src="summary.js"></script>
-    <p id="source_text">Put words here.</p>
-    <br>
-    <input type="textarea" id="summary_text" rows="10" cols="50" placeholder="write summary here">
-    <br>
-    <button id="check_button" onclick="Check_Now()">Check Your Summary</button>
-    <br>
-    <p id="results_text">Your summary is __% similar to the source text.</p>
 </body>
 
 
