@@ -1,4 +1,5 @@
-
+var dumb_counter1 = 0;
+var dumb_counter2 = 0;
 
 
 function GetPassage() {
@@ -6,11 +7,13 @@ function GetPassage() {
         document.getElementById('part1_div').style.display="block";
         document.getElementById('part2_div').style.display="none";
         document.getElementById('custom_practice').style.display="none";
+        dumb_counter1 = 0;
     }
     else if (document.getElementById('passage_select').value == "Part2") {
         document.getElementById('part2_div').style.display="block";
         document.getElementById('part1_div').style.display="none";
         document.getElementById('custom_practice').style.display="none";
+        dumb_counter2 = 0;
     }
     else if (document.getElementById('passage_select').value == "Custom") {
         document.getElementById('custom_practice').style.display="block";
@@ -20,10 +23,26 @@ function GetPassage() {
 }
 
 function CheckPart1 () {
-//Make everything visible in a completely lame way.
+    if (dumb_counter1 == 0) {
+
+    //Make everything visible in a completely lame way.
     document.getElementById('answeredp1q1').style.display="block";
     document.getElementById('answeredp1q2').style.display="block";
+    document.getElementById('answeredp1q3').style.display="block";
+    document.getElementById('answeredp1q4').style.display="block";
+    document.getElementById('answeredp1q5').style.display="block";
+    document.getElementById('answeredp1q6').style.display="block";
+    document.getElementById('answeredp1q7').style.display="block";
+    document.getElementById('answeredp1q8').style.display="block";
+    dumb_counter1 = 1;
+    ActuallyCheckP1();
+    } else {
+        ActuallyCheckP1();
+    }
 
+}
+
+function ActuallyCheckP1 (){
 //Provide advice for each individual question in a completely lame way.
     //q1
     var q1_answer = document.getElementById('p1q1').value;
@@ -39,26 +58,147 @@ function CheckPart1 () {
         q2_feedback = "Good job changing to passive voice."
     } else { q2_feedback = "Change 'improve' to 'are improved by' and move 'social structures' to the subject position"}
     document.getElementById('p1q2_feedback').innerHTML=q2_feedback;
-
+    //q3
+    var q3_answer = document.getElementById('p1q3').value;
+    var q3_feedback = "";
+    if (!q3_answer.includes("English")){
+        q3_feedback = "The word English should be included. Please make sure you are attempting the paraphrase."
+    } 
+    if (q3_answer.includes("officially")) {
+        q3_feedback = q3_feedback + "Consider changing 'officially' to a word such as 'official'. "
+    } 
+    if (q3_answer.includes("extensive")){
+        q3_feedback.concat = q3_feedback + "Consider changing 'extensive' to 'extensively'. "
+    }
+    if (q3_feedback == "") {
+        q3_feedback = "No advice about the target words and phrases."
+    }
+    document.getElementById('p1q3_feedback').innerHTML=q3_feedback;
+    //q4
+    var q4_answer = document.getElementById('p1q4').value;
+    var q4_feedback = "";
+    if (q4_answer.includes("collection")) {
+        q4_feedback = q4_feedback + "Consider changing 'collection' to a word such as 'collective' or 'collected'. "
+    } 
+    if (q4_answer.includes("different")){
+        q4_feedback = q4_feedback + "Consider changing 'different' to the verb 'differ' or to the noun 'difference'. "
+    }
+    if (q4_answer.includes("consistent")){
+        q4_feedback = q4_feedback + "Consider changing 'consistent' to the noun 'consinstency'. "
+    }
+    if (q4_feedback == "") {
+        q4_feedback = "No advice about the target words and phrases."
+    }
+    document.getElementById('p1q4_feedback').innerHTML=q4_feedback;
+    //q5
+    var q5_answer = document.getElementById('p1q5').value;
+    var q5_feedback = "";
+    if (q5_answer.includes("southwest")) {
+        q5_feedback = q5_feedback + "You can change 'southwest' to 'southwestern'. "
+    } 
+    if (q5_answer.includes("locally")){
+        q5_feedback = q5_feedback + "Consider changing 'locally' to the adjective 'local' or to the noun 'locals'. "
+    }
+    if (q5_answer.includes("sought")){
+        q5_feedback = q5_feedback + "Change to the active voice by moving 'people' to the subject position and 'Acer leiponese' to the object position. The verb should then be 'seek.' "
+    }
+    if (q5_feedback == "") {
+        q5_feedback = "No advice about the target words and phrases."
+    }
+    document.getElementById('p1q5_feedback').innerHTML=q5_feedback;
+    //q6
+    var q6_answer = document.getElementById('p1q6').value;
+    var q6_feedback = "";
+    if (q6_answer.includes("generally")) {
+        q6_feedback = q6_feedback + "You can change 'generally' to 'in general'. "
+    } 
+    if (!q6_answer.includes("are fed on by")){
+        q6_feedback = q6_feedback + "Change 'feeds' to the passive voice by making 'flowers' the subject of the sentence and changing 'feeds' to 'are fed on by'. "
+    }
+    if (q6_feedback == "") {
+        q6_feedback = "No advice about the target words and phrases."
+    }
+    document.getElementById('p1q6_feedback').innerHTML=q6_feedback;
+    //q7
+    var q7_answer = document.getElementById('p1q7').value;
+    var q7_feedback = "";
+    if (!q7_answer.includes("was provided by")) {
+        q7_feedback = q7_feedback + "This sentence is in the past tense - be sure to make the passive voice with the phrase 'was provided by'. "
+    }
+    if (q7_feedback == "") {
+        q7_feedback = "No advice about the target words and phrases."
+    }
+    document.getElementById('p1q7_feedback').innerHTML=q7_feedback;
+    //q8
+    var q8_answer = document.getElementById('p1q8').value;
+    var q8_feedback = "";
+    if (q8_answer.includes("was defeated by")) {
+        q8_feedback = q8_feedback + "Make the subject of the first half of the sentence 'the Union Army' and the object 'it' then change the verb to active voice. "
+    } 
+    if (q8_answer.includes("made a retreat")){
+        q8_feedback = q8_feedback + "Consider changing the phrase 'make a retreat' to the simple verb 'retreat'. "
+    }
+    if (q8_answer.includes("remembered")){
+        q8_feedback = q8_feedback + "Change to the active voice by moving 'us' to the subject position and 'the event' to the object position. The verb should then be 'remember.' "
+    }
+    if (q8_feedback == "") {
+        q8_feedback = "No advice about the target words and phrases."
+    }
+    document.getElementById('p1q8_feedback').innerHTML=q8_feedback;
+    document.getElementById('check_part1').innerHTML="Re-check Answers";
 }
 
 function CheckPart2 () {
-//Make everything visible in a completely lame way.
-    document.getElementById('answeredp2q1').style.display="block";
-    document.getElementById('answeredp2q2').style.display="block";
+    if (dumb_counter2 == 0) {
 
-//Provide advice for each individual question in a completely lame way.
-    //q1
-
-
+        //Make everything visible in a completely lame way.
+        document.getElementById('answeredp2q1').style.display="block";
+        document.getElementById('answeredp2q2').style.display="block";
+        document.getElementById('answeredp2q3').style.display="block";
+        document.getElementById('answeredp2q4').style.display="block";
+        document.getElementById('answeredp2q5').style.display="block";
+        document.getElementById('answeredp2q6').style.display="block";
+        document.getElementById('answeredp2q7').style.display="block";
+        document.getElementById('answeredp2q8').style.display="block";
+        dumb_counter2 = 1;
+        ActuallyCheckP2();
+    } else {
+        ActuallyCheckP2();
+        }
+    
 }
 
-//Display Example Sentences in a completely lame way.
+function ActuallyCheckP2() {
+
+
+document.getElementById('check_part2').innerHTML="Re-check Answers";
+}
+
+//Display part 1 Example Sentences in a completely lame way.
 function Getp1q1() {
     document.getElementById('p1q1_example').style.display="block";
 }
-
-
+function Getp1q2() {
+    document.getElementById('p1q2_example').style.display="block";
+}
+function Getp1q3() {
+    document.getElementById('p1q3_example').style.display="block";
+}
+function Getp1q4() {
+    document.getElementById('p1q4_example').style.display="block";
+}
+function Getp1q5() {
+    document.getElementById('p1q5_example').style.display="block";
+}
+function Getp1q6() {
+    document.getElementById('p1q6_example').style.display="block";
+}
+function Getp1q7() {
+    document.getElementById('p1q7_example').style.display="block";
+}
+function Getp1q8() {
+    document.getElementById('p1q8_example').style.display="block";
+}
 
 
 //Checks custom paraphrases
