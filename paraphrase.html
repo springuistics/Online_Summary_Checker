@@ -1,0 +1,82 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link href="paraphrase.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="headers">
+        <h1>Pathways to Academic English Practice</h1>
+        <h2>Practice Paraphrasing:</h2>
+    </div>
+    <br>
+    <div class="main_stuff">
+        <div class="Drop-Down_Box">
+            <label for="passage_select">Select Practice:</label>
+            <br>
+            <select id="passage_select" onchange="GetPassage()">
+                <option value="default">Select Practice</option>
+                <option value="Part1">Pathways Worksheet "Paraphrasing Practice" Part 1</option>
+                <option value="Part2">Pathways Worksheet "Paraphrasing Practice" Part 2</option>
+                <option value="Custom">Enter My Own Text</option>
+            </select>
+        </div>
+        <br>
+        
+        <div class="part1" id="part1_div" style="display:none">
+            <label for="p1q1" class="question_sentence" id="p1q1_label">1. Many scholars have claimed that starting the school day later in the morning will increase students' ability to pay attention.</label>
+                <br>
+                <input type="text" class="answer_box" id="p1q1" placeholder="Write or copy-and-paste your answer here">
+                    <br>
+                    <div id="answeredp1q1" style="display:none">
+                    <label for="p1q1_feedback" class="feedback_label">Advice:</label><p id="p1q1_feedback" class="feedback">Feedback goes here.</p><button id="p1q1_button" class="example_ask_button" onclick="Getp1q1()">See Example Answer</button>
+                    </div>
+                <p id="p1q1_example" class="example_answer" style="display:none">Many scholars have claimed that students' ability to pay attention will be increased by starting the school day later in the morning.</p>
+                <br>
+
+            <label for="p1q2" class="question_sentence" id="p1q2_label">2. Raising taxes, cutting spending, and relying more on volunteers improve social structures.</label>
+                <br>
+                <input type="text" class="answer_box" id="p1q2" placeholder="Write or copy-and-paste your answer here">
+                    <br>
+                    <div id="answeredp1q2" style="display:none">
+                    <label for="p1q2_feedback" class="feedback_label">Advice:</label><p id="p1q2_feedback" class="feedback">Feedback goes here.</p><button id="p1q2_button" class="example_ask_button" onclick="Getp1q2()">See Example Answer</button>
+                    </div>
+                <p id="p1q2_example" class="example_answer" style="display:none">Social structures are improved by raising taxes, cutting spending, and relying more on volunteers.</p>
+                <br>
+
+        <button id="check_part1" class="check_button" onclick="CheckPart1()">Check Answers</button>
+        </div>
+        
+        <div class="part2" id="part2_div" style="display:none">
+            <label for="p2q1" class="question_sentence" id="p2q1_label">1. The SS Bury was a passenger vessel that was built to help with Britain's Great Central Railway in 1911.</label>
+                <br>
+                <input type="text" class="answer_box" id="p2q1" placeholder="Write or copy-and-paste your answer here">
+                    <br>
+                    <div id="answeredp2q1" style="display:none">
+                    <label for="p2q1_feedback" class="feedback_label">Advice:</label><p id="p2q1_feedback" class="feedback">Feedback goes here.</p><button id="p2q1_button" class="example_ask_button" onclick="Getp2q1()">See Example Answer</button>
+                    </div>
+                <p id="p2q1_example" class="example_answer" style="display:none">The SS Bury was a passenger ship built to assist with Brittain's Great Central Railway in 1911.</p>
+                <br>
+        <button id="check_part2" class="check_button" onclick="CheckPart2()">Check Answers</button>
+        </div>
+        
+        <div class="custom" id="custom_practice" style="display:none">
+            <label for="cq1" class="question_sentence">Write or copy-and-paste your original sentence here:</label>
+            <br>
+            <textarea id="cq1" class="custom_box" rows="3" cols="70" placeholder="Write or copy-and-paste your original sentence here"></textarea>
+            <br>
+            <br>
+            <label for="cqa" class="question_sentence">Write your paraphrase here:</label>
+            <br>
+            <textarea id="cqa" class="custom_box" rows="3" cols="70" placeholder="Write your paraphrase here"></textarea>
+            <br>
+            <br>
+            <button id="check_custom" class="check_button" onclick="CheckCustom()">Check Paraphrase</button>
+            <p id="cq_feedback" class="example_answer" style="display:none">Feedback will go here.</p>
+
+        </div>
+    </div>
+    <script type="text/javascript" src="paraphrase.js"></script>
+</body>
+
+
+</html>

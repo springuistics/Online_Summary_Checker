@@ -1,0 +1,68 @@
+.headers {
+    text-align: center;
+}
+
+.Drop-Down_Box {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.part1 {
+    border: 2px black;
+    background-color: lightblue;
+    margin: auto;
+    width: 80%;
+    margin-top: 10px;
+}
+
+.question_sentence {
+    font-size: 14pt;
+    text-align: left;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.answer_box {
+    width: 90%;
+    
+}
+
+.feedback_label {
+    font-size: 16pt;
+    color: red;
+
+}
+
+.feedback {
+    font-size: 14pt;
+
+}
+
+.example_ask_button {
+    font-size: 14pt;
+    background-color: darkgray;
+    border: 2px;
+    border-color: blue;
+}
+
+.example_answer {
+    font-size: 16pt;
+    color: darkblue;
+}
+
+.custom {
+    border: 3px;
+    border-color: black;
+    width: 80%;
+    background-color: rgb(235, 193, 253);
+    text-align: center;
+    margin: auto;
+}
+
+.check_button {
+    font-size: 14pt;
+    background-color: rgb(22, 56, 2);
+    color:rgb(255, 255, 255);
+    margin-top: 10px;
+    margin: auto;
+}
