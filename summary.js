@@ -78,7 +78,7 @@ function Check_Now(){
     let temp_s_text = temp_s_text1.replace(/[.,\/#!$%\^&\*;:?{}=\-_`~()]/g,"");
     let s_text = temp_s_text.replace(/\s{2,}/g," ");
     const source_array = s_text.split(" "); 
-//Creates arrays of 3-grams and 6-grams for source text.
+//Creates arrays of 3-grams and 5-grams for source text.
     source_array.forEach(function(word, index){
         let no_words = source_array.length;
         let checker = index + 2;
@@ -101,7 +101,7 @@ function Check_Now(){
             source_5grams.push(my_gram6);
         }        
     });
-//Creates arrays of 3-grams and 6-grams for summary text written by user.
+//Creates arrays of 3-grams and 5-grams for summary text written by user.
     let temp_i_text1 = document.getElementById('summary_text').value;
     let temp_i_text2 = temp_i_text1.toLowerCase();
     let temp_i_text = temp_i_text2.replace(/[.,\/#!$%\^&\*;:?{}=\-_`~()]/g,"");
@@ -129,7 +129,7 @@ function Check_Now(){
             input_5grams.push(my_gram6);
         }         
     });
-//Iterates source arrays over input arrays to check for matching 3- and 6-grams.
+//Iterates source arrays over input arrays to check for matching 3- and 5-grams.
     for (let i = 0; i < source_3grams.length; i++) {
         for (let j = 0; j < input_3grams.length; j++) {
             if (source_3grams[i] === input_3grams[j]) {
@@ -163,25 +163,25 @@ function Check_Now(){
     var advice_repeats1 = "";
     var advice_repeats2 = "";
     if (percentage < 0.25) {
-        advice_length = "Your summary is too short. Please write more and try to include a few more details about main points."
+        advice_length = "Summary Length: Your summary is too short. A good summary is about 25%-35% the length of the orignial text. Try to include a few more details about main points."
     }
     else if (percentage > 0.4) {
-        advice_length = "Your summary is too long. Please reduce some of the detailed information without deleting any of the main points."
+        advice_length = "Summary Length: Your summary is too long. A good summary is about 25%-35% the length of the orignial text. Try to reduce some details without deleting any of the main points."
     }
     else {
-        advice_length = "Your summary is an appropriate length."
+        advice_length = "Summary Length: Good job! A good summary, like yours, is about 25%-35% the length of the orignial text."
     }
     if (counter5 > 0) {
-        advice_repeats1 = "Your summary contains " + counter5 + " instances of 5-word chunk repeats from the original. You should not copy 5 or more words in a row from the original. Please rewrite those sections in your own words or rephrase them using the advice in Chapter 4 of Pathways to Academic English."
+        advice_repeats1 = "Your summary contains " + counter5 + " instances of 5-word chunk repeats from the original. Copying five or more words from an original text is not recommended. Please rewrite or paraphrase those sections using the advice in Chapter 4 of Pathways to Academic English."
     }
     else {
-        advice_repeats1 = "Your summary does not contain any instances of 5-word chunk repeats from the original - good job."
+        advice_repeats1 = "Good job! Your summary does not contain any instances of 5-word chunk repeats from the original."
     }
     if (percentage_3 > 0.1) {
         advice_repeats2 = "Your summary contains " + counter + " instances of 3-word chunk repeats from the original, which is too many. Try to rephrase some of your repeated 3-word chunks by using the advice in Chapter 4 of Pathways to Academic English."
     }
     else {
-        advice_repeats2 = "Your summary contains only " + counter + " instances of 3-word chunk repeats from the original, but this is an acceptable amount."
+        advice_repeats2 = "Your summary contains only " + counter + " instances of 3-word chunk repeats from the original, which is an acceptable amount of repetition."
     }
 
     var resulty = advice_length + "<br>" + "<br>" + advice_repeats1 + "<br>" + "<br>" + advice_repeats2 + "<br>" + "<br>" + "Your 5-word chunk repeats:" + "<br>" + "<br>" + repeats_5 + "<br>" + "<br>" + "Your 3-word chunk repeats:" + "<br>" + "<br>" + repeats_3;
