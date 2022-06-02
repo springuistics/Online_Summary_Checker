@@ -60,6 +60,8 @@ function Getp1q1() {
 
 
 
+
+//Checks custom paraphrases
 function CheckCustom () {
     var source_3grams = [];
     var source_5grams = [];

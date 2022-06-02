@@ -19,12 +19,24 @@ function GetPassage() {
         source_1 = passage1_p1 + passage1_p2 + passage1_p3;
         source_2 = passage1_p1 + "<br>" + "<br>" + passage1_p2 + "<br>" + "<br>" + passage1_p3;
         document.getElementById('source_text').innerHTML=source_2;
+        let newinput2 = document.getElementById('newinput');
+        let newbutton2 = document.getElementById('newbutton');
+        let dumbbr2 = document.getElementById('dumbbr');
+        newinput2.remove();
+        newbutton2.parentNode.removeChild(newbutton2);
+        dumbbr2.parentNode.removeChild(dumbbr2);
     }
     else if (picker == "Passage2") {
         document.getElementById('source_text').style.display="block";
         source_1 = passage2_p1 + "<br>" + "<br>" + passage2_p2 + "<br>" + "<br>" + passage2_p3;
         source_2 = passage2_p1 + "<br>" + "<br>" + passage2_p2 + "<br>" + "<br>" + passage2_p3;
         document.getElementById('source_text').innerHTML=source_2;
+        let newinput2 = document.getElementById('newinput');
+        let newbutton2 = document.getElementById('newbutton');
+        let dumbbr2 = document.getElementById('dumbbr');
+        newinput2.remove();
+        newbutton2.parentNode.removeChild(newbutton2);
+        dumbbr2.parentNode.removeChild(dumbbr2);
     }
     else if (picker == "Custom") {
         document.getElementById('source_text').style.display="none";
