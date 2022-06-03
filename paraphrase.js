@@ -68,7 +68,7 @@ function ActuallyCheckP1 (){
         q3_feedback = q3_feedback + "Consider changing 'officially' to a word such as 'official'. "
     } 
     if (q3_answer.includes("extensive")){
-        q3_feedback.concat = q3_feedback + "Consider changing 'extensive' to 'extensively'. "
+        q3_feedback = q3_feedback + "Consider changing 'extensive' to 'extensively'. "
     }
     if (q3_feedback == "") {
         q3_feedback = "No advice about the target words and phrases."
@@ -112,7 +112,7 @@ function ActuallyCheckP1 (){
     if (q6_answer.includes("generally")) {
         q6_feedback = q6_feedback + "You can change 'generally' to 'in general'. "
     } 
-    if (!q6_answer.includes("are fed on by")){
+    if (q6_answer.includes("feeds") | q6_answer.includes("feed")){
         q6_feedback = q6_feedback + "Change 'feeds' to the passive voice by making 'flowers' the subject of the sentence and changing 'feeds' to 'are fed on by'. "
     }
     if (q6_feedback == "") {
@@ -169,8 +169,25 @@ function CheckPart2 () {
 }
 
 function ActuallyCheckP2() {
+//Provide advice for each individual question in a completely lame way.
+    //q1
+    var q1_answer = document.getElementById('p2q1').value;
+    var q1_feedback = "";
+    if (q1_answer.includes("vessl")) {
+        q1_feedback = q1_feedback + "Please find a synonym for 'vessel,' i.e., https://www.thesaurus.com/browse/vessel"
+    }  
+    if (q1_answer.includes("help")) { 
+        q1_feedback = q1_feedback + "Please find a synonym for 'vessel,' i.e., https://www.thesaurus.com/browse/help"
+    }
+    if (q1_answer.includes("that was built") | q1_answer.includes("which was built")){
+        q1_feedback = q1_feedback + "Reduce the phrase 'that was built' to 'built' "
+    }
+    if (q1_feedback == "") {
+        q1_feedback = "No advice about the target words and phrases."
+    }
+    document.getElementById('p2q1_feedback').innerHTML=q1_feedback;
 
-
+    
 document.getElementById('check_part2').innerHTML="Re-check Answers";
 }
 
@@ -200,6 +217,31 @@ function Getp1q8() {
     document.getElementById('p1q8_example').style.display="block";
 }
 
+//Display part 2 Example Sentences in a completely lame way.
+function Getp2q1() {
+    document.getElementById('p1q1_example').style.display="block";
+}
+function Getp2q2() {
+    document.getElementById('p1q2_example').style.display="block";
+}
+function Getp2q3() {
+    document.getElementById('p1q3_example').style.display="block";
+}
+function Getp2q4() {
+    document.getElementById('p1q4_example').style.display="block";
+}
+function Getp2q5() {
+    document.getElementById('p1q5_example').style.display="block";
+}
+function Getp2q6() {
+    document.getElementById('p1q6_example').style.display="block";
+}
+function Getp2q7() {
+    document.getElementById('p1q7_example').style.display="block";
+}
+function Getp2q8() {
+    document.getElementById('p1q8_example').style.display="block";
+}
 
 //Checks custom paraphrases
 function CheckCustom () {
