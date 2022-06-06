@@ -51,3 +51,10 @@
     margin:auto;
     padding: 10px;
 }
+
+.visual {
+    border: solid 1px black;
+    text-align: center;
+    margin: auto;
+    
+}
