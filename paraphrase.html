@@ -4,24 +4,24 @@
     <link href="paraphrase.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <div class="headers">
+    <div class="main_stuff">
         <h1>Pathways to Academic English Practice</h1>
         <h2>Practice Paraphrasing:</h2>
-    </div>
-    <br>
-    <div class="main_stuff">
+        <br>
         <div class="Drop-Down_Box">
-            <label for="passage_select">Select Practice:</label>
+            <label for="passage_select" style="font-weight: bold">Select Practice:</label>
             <br>
             <select id="passage_select" onchange="GetPassage()">
                 <option value="default">Select Practice</option>
                 <option value="Part1">Pathways Worksheet "Paraphrasing Practice" Part 1</option>
                 <option value="Part2">Pathways Worksheet "Paraphrasing Practice" Part 2</option>
+                <option value="Extra_Practice">Step By Step Practice</option>
                 <option value="Custom">Enter My Own Text</option>
             </select>
         </div>
         <br>
-        
+    </div>
+
         <div class="part1" id="part1_div" style="display:none">
             <label for="p1q1" class="question_sentence" id="p1q1_label">1. Many scholars have claimed that starting the school day later in the morning will increase students' ability to pay attention.</label>
                 <br>
@@ -102,7 +102,7 @@
                     </div>
                 <p id="p1q8_example" class="example_answer" style="display:none">The Confederate Army of Northern Virginia retreated from the city of Gettysburg because the Union Army defeated it, and now we remember the event as The Retreat from Gettysburg.</p>
                 <br>
-        <button id="check_part1" class="check_button" onclick="CheckPart1()">Check Answers</button>
+        <div class="check_buttons2"><button id="check_part1" class="check_button" onclick="CheckPart1()">Check Answers</button></div>
         </div>
         
         <div class="part2" id="part2_div" style="display:none">
@@ -115,9 +115,39 @@
                     </div>
                 <p id="p2q1_example" class="example_answer" style="display:none">The SS Bury was a passenger ship built to assist with Brittain's Great Central Railway in 1911.</p>
                 <br>
-        <button id="check_part2" class="check_button" onclick="CheckPart2()">Check Answers</button>
+
+        <div class="check_buttons2"><button id="check_part2" style="margin: auto" class="check_button" onclick="CheckPart2()">Check Answers</button></div>
         </div>
         
+        <div class="Extra" id="extra_practice" style="display:none">
+            <h3 id="extra_directions">Begin by changing the parts of speech of the underlined words</h3>
+            <br>
+            <label for="eq1" class="question_sentence" id="eq1_label">While it is a <u>rarity</u> for orcas to attack humans in the wild, four humans have been killed due to <u>interacting</u> with orcas that were in <u>captivity.</u></label>
+            <br>
+            <input type="text" class="answer_box" id="eq1" placeholder="Write your answer here">
+            <br>
+            <div id="answeredeq1" style="display:none">
+                <label for="eq1_feedback" class="feedback_label">Advice:</label><p id="eq1_feedback" class="feedback">Feedback goes here.</p><button id="eq1_button" class="example_ask_button" onclick="GetEq1P1()">See Example Answer</button>
+            </div>
+            <p id="eq1p1_example" class="example_answer" style="display:none">The first sentence answer should go here.</p>
+            <br>
+        
+            <label for="eq2" class="question_sentence" id="eq2_label">David Scott, who is an astronaut from <u>America</u>, was accepted into the US Military Academy in 1954, and he became the seventh person to walk on the moon in 1967 thanks to the <u>intense</u> training that he received there.</label>
+            <br>
+            <input type="text" class="answer_box" id="eq2" placeholder="Write your answer here">
+            <br>
+            <div id="answeredeq2" style="display:none">
+                <label for="eq2_feedback" class="feedback_label">Advice:</label><p id="eq2_feedback" class="feedback">Feedback goes here.</p><button id="eq2_button" class="example_ask_button" onclick="GetEq1P2()">See Example Answer</button>
+            </div>
+            <p id="eq1p2_example" class="example_answer" style="display:none">The first sentence answer should go here.</p>
+            <br>
+        <div id="button_container" style="margin:auto; text-align: center">
+        <button id="check_extra_back" class="check_button2" onclick="CheckExtraBK()" style="display:none">Previous Stage</button>
+        <button id="check_extra" class="check_button" onclick="CheckExtra()">Check Answers</button>
+        <button id="check_extra_next" class="check_button2" onclick="CheckExtraNXT()" style="display:none">Next Stage</button>
+        </div>
+        </div>
+
         <div class="custom" id="custom_practice" style="display:none">
             <label for="cq1" class="question_sentence">Write or copy-and-paste your original sentence here:</label>
             <br>

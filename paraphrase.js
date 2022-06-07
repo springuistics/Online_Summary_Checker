@@ -7,18 +7,27 @@ function GetPassage() {
         document.getElementById('part1_div').style.display="block";
         document.getElementById('part2_div').style.display="none";
         document.getElementById('custom_practice').style.display="none";
+        document.getElementById('extra_practice').style.display="none";
         dumb_counter1 = 0;
     }
     else if (document.getElementById('passage_select').value == "Part2") {
         document.getElementById('part2_div').style.display="block";
         document.getElementById('part1_div').style.display="none";
         document.getElementById('custom_practice').style.display="none";
+        document.getElementById('extra_practice').style.display="none";
         dumb_counter2 = 0;
+    }
+    else if (document.getElementById('passage_select').value == "Extra_Practice") {
+        document.getElementById('extra_practice').style.display="block";
+        document.getElementById('part1_div').style.display="none";
+        document.getElementById('part2_div').style.display="none";
+        document.getElementById('custom_practice').style.display="none";
     }
     else if (document.getElementById('passage_select').value == "Custom") {
         document.getElementById('custom_practice').style.display="block";
         document.getElementById('part1_div').style.display="none";
         document.getElementById('part2_div').style.display="none";
+        document.getElementById('extra_practice').style.display="none";
     }
 }
 
@@ -243,6 +252,261 @@ function Getp2q8() {
     document.getElementById('p1q8_example').style.display="block";
 }
 
+var stageNo = 0;
+
+function CheckExtra(){
+    document.getElementById('answeredeq1').style.display="block";
+    document.getElementById('answeredeq2').style.display="block";
+    if (stageNo == 0){
+        //Give advice on changing POS
+        var e1_answer = document.getElementById('eq1').value;
+        var e1_feedback = "";
+        var e2_answer = document.getElementById('eq2').value;
+        var e2_feedback = "";
+        if (e1_answer == "") {
+            e1_feedback = "Please write something first."
+        }
+        if (e2_answer == "") {
+            e2_feedback = "Please write something first."
+        }
+        if (e1_answer.includes("rarity")){
+            e1_feedback = e1_feedback + "Change the part of speech of 'rarity.' Consider the word 'rare.' "
+        }
+        if (e1_answer.includes("interacting")){
+            e1_feedback = e1_feedback + "Change the part of speech of 'interacting.' Consider making it a noun by using the '-tion' suffix. "
+        }
+        if (e1_answer.includes("captivity")){
+            e1_feedback = e1_feedback + "Change the part of speech of 'captivity.' Consider changing it to the verb form. "
+        }
+        if (e2_answer.includes("America")){
+            e2_feedback = e2_feedback + "Change the part of speech of 'America.' Consider making it an adjective using the '-ian' suffix. "
+        }
+        if (e2_answer.includes("intense")){
+            e2_feedback = e2_feedback + "Change the word 'intense' by adding the '-ive' suffix. "
+        }
+        if (e1_answer == "") {
+            e1_feedback = "No advice regarding the target words."
+        }
+        if (e2_answer === "") {
+            e2_feedback = "No advice regarding the target words."
+        }
+        document.getElementById('eq1_feedback').innerHTML=e1_feedback;
+        document.getElementById('eq2_feedback').innerHTML=e2_feedback;
+        document.getElementById('check_extra_next').style.display="inline";
+        SetTheParameters();
+    } else if (stageNo == 1) {
+        //Give advice on changing voice
+        var e1_answer = document.getElementById('eq1').value;
+        var e1_feedback = "";
+        var e2_answer = document.getElementById('eq2').value;
+        var e2_feedback = "";
+        if (e1_answer == "") {
+            e1_feedback = "Please write something first."
+        }
+        if (e2_answer == "") {
+            e2_feedback = "Please write something first."
+        }
+        if (e1_answer.includes("been")){
+            e1_feedback = e1_feedback + "Move the object 'interactions' to the subject position and change 'kill' to the active voice. "
+        }
+        if (e2_answer.includes("was accepted")){
+            e2_feedback = e2_feedback + "Move the object 'the US Military Academy' to the subject position.  "
+        }
+        if (!e2_answer.substring(0,2) === "in"){
+            e2_feedback = e2_feedback + "Consider moving 'in 1954' to the beginning of the sentence for ease of reading. "
+        }
+        if (e1_answer == "") {
+            e1_feedback = "No advice regarding the target words."
+        }
+        if (e2_answer === "") {
+            e2_feedback = "No advice regarding the target words."
+        }
+        document.getElementById('eq1_feedback').innerHTML=e1_feedback;
+        document.getElementById('eq2_feedback').innerHTML=e2_feedback;
+        document.getElementById('check_extra_back').style.display="inline";
+        document.getElementById('check_extra_next').style.display="inline";
+        SetTheParameters();
+    } else if (stageNo == 2) {
+        //Give advice on reduction
+        var e1_answer = document.getElementById('eq1').value;
+        var e1_feedback = "";
+        var e2_answer = document.getElementById('eq2').value;
+        var e2_feedback = "";
+        if (e1_answer == "") {
+            e1_feedback = "Please write something first."
+        }
+        if (e2_answer == "") {
+            e2_feedback = "Please write something first."
+        }
+        if (e1_answer.includes("it is")){
+            e1_feedback = e1_feedback + "Delete the dummy subject 'it' and reduce to a complex noun phrase. Hint: '.... on humans'. "
+        }
+        if (e1_answer.includes("that were")){
+            e1_feedback = e1_feedback + "Reduce the phrase 'orcas that were captive' by moving 'captive' to an adjective position in front of 'orcas.' "
+        }
+        if (e2_answer.includes("who is")){
+            e2_feedback = e2_feedback + "Reduce the relative clause 'who is an American austronaut' by making a noun phrase surrounded by commas. "
+        }
+        if (e2_answer.includes("and he")){
+            e2_feedback = e2_feedback + "Reduce the independent clause 'and he became...' to a relative clause, i.e. 'who became...'  "
+        }
+        if (e2_answer.includes("that he received")){
+            e2_feedback = e2_feedback + "Reduce the relative clause 'that he received there' to a noun phrase beginning with 'receiving.'  "
+        }
+        if (e1_answer == "") {
+            e1_feedback = "No advice regarding the target words."
+        }
+        if (e2_answer === "") {
+            e2_feedback = "No advice regarding the target words."
+        }
+        document.getElementById('eq1_feedback').innerHTML=e1_feedback;
+        document.getElementById('eq2_feedback').innerHTML=e2_feedback;
+        document.getElementById('check_extra_back').style.display="inline";
+        document.getElementById('check_extra_next').style.display="inline";
+        SetTheParameters();
+    } else if (stageNo == 3) {
+        //Give advice on synonyms
+        var e1_answer = document.getElementById('eq1').value;
+        var e1_feedback = "";
+        var e2_answer = document.getElementById('eq2').value;
+        var e2_feedback = "";
+        if (e1_answer == "") {
+            e1_feedback = "Please write something first."
+        }
+        if (e2_answer == "") {
+            e2_feedback = "Please write something first."
+        }
+        if (e1_answer.includes("while")){
+            e1_feedback = e1_feedback + "Please find a synonym for 'vessel,' i.e., https://www.thesaurus.com/browse/while"
+        }
+        if (!e1_answer.includes("killer whale")){
+            e1_feedback = e1_feedback + "The common name for an 'orca' is 'killer whale.' "
+        }
+        if (e1_answer.includes("rare")){
+            e1_feedback = e1_feedback + "Please find a synonym for 'rare,' i.e., https://www.thesaurus.com/browse/rare"
+        }
+        if (!e1_answer.slice(-7) === "humans."){
+            e1_feedback = e1_feedback + "Please find a synonym for 'human,' i.e., https://www.thesaurus.com/browse/human "
+        }
+        if (e2_answer.includes("accepted")){
+            e2_feedback = e2_feedback + "Please find a synonym for 'accepted,' i.e., https://www.thesaurus.com/browse/accepted"
+        }
+        if (e2_answer.includes("person")){
+            e2_feedback = e2_feedback + "Please find a synonym for 'person,' i.e., https://www.thesaurus.com/browse/person"
+        }
+        if (e2_answer.includes("walk")){
+            e2_feedback = e2_feedback + "Please find a synonym for 'walk,' i.e., https://www.thesaurus.com/browse/walk"
+        }
+        if (e2_answer.includes("thanks to")){
+            e2_feedback = e2_feedback + "Please find a synonym for 'thanks to,' i.e., https://www.thesaurus.com/browse/thanks%20to"
+        }
+        if (e1_answer == "") {
+            e1_feedback = "No advice regarding the target words."
+        }
+        if (e2_answer === "") {
+            e2_feedback = "No advice regarding the target words."
+        }
+        document.getElementById('eq1_feedback').innerHTML=e1_feedback;
+        document.getElementById('eq2_feedback').innerHTML=e2_feedback;
+        document.getElementById('check_extra_back').style.display="inline";
+        document.getElementById('check_extra_next').style.display="none";
+        SetTheParameters();
+    } 
+
+}
+
+function SetTheParameters(){
+    if (stageNo == 0){
+        document.getElementById('extra_directions').innerHTML="Begin by changing the parts of speech of the underlined words";
+        document.getElementById('eq1_label').innerHTML="While it is a <u>rarity</u> for orcas to attack humans in the wild, four humans have been killed due to <u>interacting</u> with orcas that were in <u>captivity.</u>";
+        document.getElementById('eq2_label').innerHTML="David Scott, who is an astronaut from <u>America</u>, was accepted by the US Military Academy in 1954, and he became the seventh person to walk on the moon in 1967 thanks to the <u>intense</u> training that he received there.";
+        document.getElementById('eq1p1_example').style.display="none";
+        document.getElementById('eq1p2_example').style.display="none";
+    //disable Previous button
+    document.getElementById('check_extra_back').style.display="none";
+    document.getElementById('check_extra_next').style.display="inline";
+    } else if (stageNo == 1) {
+        document.getElementById('extra_directions').innerHTML="Now change the voice or move the subjects and objects of the underlined sections";
+        document.getElementById('eq1_label').innerHTML="While it is rare for orcas to attack humans in the wild, four humans <u>have been killed due to</u> interactions with orcas that were captive.";
+        document.getElementById('eq2_label').innerHTML="David Scott, who is an American astronaut, <u>was accepted</u> by the US Military Academy in 1954, and he became the seventh person to walk on the moon in 1967 thanks to the intensive training that he received there.";
+        document.getElementById('eq1p1_example').style.display="none";
+        document.getElementById('eq1p2_example').style.display="none";
+        document.getElementById('check_extra_back').style.display="inline";
+        document.getElementById('check_extra_next').style.display="inline";
+    } else if (stageNo == 2) {
+        document.getElementById('extra_directions').innerHTML="Now reduce or rephrase the underlined sections";
+        document.getElementById('eq1_label').innerHTML="While <u>it is rare for orcas to attack humans</u> in the wild, interactions with <u>orcas that were captive</u> have killed four humans.";
+        document.getElementById('eq2_label').innerHTML="In 1954, the US Military Academy accepted David Scott, <u>who is an American astronaut</u>, <u>and he</u> became the seventh person to walk on the moon in 1967 thanks to the intensive training <u>that he received there</u>.";
+        document.getElementById('eq1p1_example').style.display="none";
+        document.getElementById('eq1p2_example').style.display="none";
+        document.getElementById('check_extra_back').style.display="inline";
+        document.getElementById('check_extra_next').style.display="inline";
+    } else if (stageNo == 3) {
+        document.getElementById('extra_directions').innerHTML="Finally, replace the underlined words or phrases with synonyms";
+        document.getElementById('eq1_label').innerHTML="<u>While</u> <u>orca</u> attacks on humans are <u>rare</u> in the wild, interactions with captive orcas have killed four <u>humans</u>.";
+        document.getElementById('eq2_label').innerHTML="In 1954, the US Military Academy <u>accepted</u> David Scott, an American astronaut, who became the seventh <u>person</u> to <u>walk</u> on the moon in 1967 <u>thanks</u> to receiving intensive training there.";
+        document.getElementById('eq1p1_example').style.display="none";
+        document.getElementById('eq1p2_example').style.display="none";   
+    //disable Next button
+    document.getElementById('check_extra_next').style.display="none";
+    document.getElementById('check_extra_back').style.display="inline";
+    } else if (stageNo > 3) {
+        alert("Resetting Stages");
+        
+        stageNo = 0;
+    }
+}
+
+function CheckExtraNXT (){
+    if (stageNo == 3) {
+        stageNo = 3;
+    } else {stageNo += 1;}
+    document.getElementById('answeredeq1').style.display="none";
+    document.getElementById('answeredeq2').style.display="none";
+    SetTheParameters();
+}
+
+function CheckExtraBK (){
+    if (stageNo == 0) {
+        stageNo = 0;
+    } else {stageNo -= 1;}
+    document.getElementById('answeredeq1').style.display="none";
+    document.getElementById('answeredeq2').style.display="none";
+    SetTheParameters();
+}
+
+function GetEq1P1() {
+    if (stageNo == 0) {
+        document.getElementById('eq1p1_example').style.display="block";
+        document.getElementById('eq1p1_example').innerHTML="While it is <u>rare</u> for orcas to attack humans in the wild, four humans have been killed due to <u>interactions</u> with orcas that were <u>captive</u>.";
+    } else if (stageNo == 1) {
+        document.getElementById('eq1p1_example').style.display="block";
+        document.getElementById('eq1p1_example').innerHTML="While it is rare for orcas to attack humans in the wild, <u>interactions with orcas that were captive have killed four humans</u>.";
+    } else if (stageNo == 2) {
+        document.getElementById('eq1p1_example').style.display="block";
+        document.getElementById('eq1p1_example').innerHTML="While <u>orca attacks on humans are rare</u> in the wild, interactions with <u>captive orcas</u> have killed four humans.";
+    } else if (stageNo == 3) {
+        document.getElementById('eq1p1_example').style.display="block";
+        document.getElementById('eq1p1_example').innerHTML="<u>Though</u> <u>killer whale</u> attacks on humans are <u>scarce</u> in the wild, interactions with captive orcas have killed four <u>people</u>.";
+    }
+}
+
+function GetEq1P2() {
+    if (stageNo == 0) {
+        document.getElementById('eq1p2_example').style.display="block";
+        document.getElementById('eq1p2_example').innerHTML="David Scott, who is an <u>American</u> astronaut, was accepted by the US Military Academy in 1954, and he became the seventh person to walk on the moon in 1967 thanks to the <u>intensive</u> training that he received there.";
+    } else if (stageNo == 1) {
+        document.getElementById('eq1p2_example').style.display="block";
+        document.getElementById('eq1p2_example').innerHTML="<u>In 1954, the US Military Academy accepted David Scott</u>, who is an American astronaut, and he became the seventh person to walk on the moon in 1967 thanks to the intensive training that he received there.";
+    } else if (stageNo == 2) {
+        document.getElementById('eq1p2_example').style.display="block";
+        document.getElementById('eq1p2_example').innerHTML="In 1954, the US Military Academy accepted David Scott, <u>an American astronaut</u>, who became the seventh person to walk on the moon in 1967 thanks to <u>receiving intensive training there</u>.";
+    } else if (stageNo == 3) {
+        document.getElementById('eq1p2_example').style.display="block";
+        document.getElementById('eq1p2_example').innerHTML="In 1954, the US Military Academy <u>admitted</u> David Scott, an American astronaut, who became the seventh <u>man</u> to <u>step</u> on the moon in 1967 <u>as a result of</u> receiving intensive training there.";
+    }
+}
+
 //Checks custom paraphrases
 function CheckCustom () {
     var source_3grams = [];
@@ -334,16 +598,16 @@ function CheckCustom () {
     var advice_repeats2 = "";
 
     if (counter5 > 0) {
-        advice_repeats1 = "Your paraphrase contains " + counter5 + " instances of 5-word chunk repeats from the original. You should not copy 5 or more words in a row from the original. Please rewrite those sections in your own words or rephrase them using the advice in Chapter 4 of Pathways to Academic English."
+        advice_repeats1 = "Number of 5-word repeats in your paraphrase: " + counter5;
     }
     else {
-        advice_repeats1 = "Your paraphrase does not contain any instances of 5-word chunk repeats from the original - good job."
+        advice_repeats1 = "Good job - your paraphrase does not contain any 5-word chunk repeats from the original text.";
     }
     if (counter > 1) {
-        advice_repeats2 = "Your summary contains " + counter + " instances of 3-word chunk repeats from the original, which is probably too many. Try to rephrase some of your repeated 3-word chunks by using the advice in Chapter 4 of Pathways to Academic English."
+        advice_repeats2 = "Number of 3-word repeats in your paraphrase: " + counter;
     }
     else {
-        advice_repeats2 = "Your summary contains " + counter + " instance(s) of 3-word chunk repeats from the original, which is an acceptable amount."
+        advice_repeats2 = "Good job - your paraphrase contains very few repeats from the original text. ";
     }
 
     var resulty = advice_repeats1 + "<br>" + "<br>" + advice_repeats2 + "<br>" + "<br>" + "Your 5-word chunk repeats:" + "<br>" + "<br>" + repeats_5 + "<br>" + "<br>" + "Your 3-word chunk repeats:" + "<br>" + "<br>" + repeats_3;
