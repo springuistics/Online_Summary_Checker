@@ -44,22 +44,30 @@ function GetPassage() {
         var newinput = document.createElement("textarea");
         var newbutton = document.createElement("input");
         var dumbbr = document.createElement("br");
+        var reset_button = document.createElement("input");
         newbutton.setAttribute("type", "button");
         newbutton.setAttribute("value", "Click Here to Set the Text");
         newinput.setAttribute("rows", 20);
         newinput.setAttribute("cols", 70);
+        reset_button.setAttribute("type", "button");
+        reset_button.setAttribute("value", "Click Here to Reset the Text");
+        reset_button.setAttribute("style", "display: none");
         newbutton.id='newbutton';
         newinput.id='newinput';
         dumbbr.id='dumbbr';
+        reset_button.id='reset_button';        
         document.getElementById('source_id').appendChild(newinput);
         document.getElementById('source_id').appendChild(dumbbr);
         document.getElementById('source_id').appendChild(newbutton);
+        document.getElementById('source_id').appendChild(reset_button);
         newbutton.onclick = Finish;
+        reset_button.onclick = Reset;
         function Finish() {
             let dumbcheck = document.getElementById('newinput').value;
             if (dumbcheck === "") {
                 alert("Please input text before clicking the button.")
             } else {
+            document.getElementById('reset_button').style.display="block";
             let newinput2 = document.getElementById('newinput');
             let newbutton2 = document.getElementById('newbutton');
             let dumbbr2 = document.getElementById('dumbbr');
@@ -71,6 +79,24 @@ function GetPassage() {
             dumbbr2.parentNode.removeChild(dumbbr2);
             document.getElementById('source_text').style.display="block";
             }
+        }
+        function Reset() {
+            document.getElementById('reset_button').style.display="none";
+            document.getElementById('source_text').style.display="none";
+            var newinput = document.createElement("textarea");
+            var newbutton = document.createElement("input");
+            var dumbbr = document.createElement("br");
+            newbutton.setAttribute("type", "button");
+            newbutton.setAttribute("value", "Click Here to Set the Text");
+            newinput.setAttribute("rows", 20);
+            newinput.setAttribute("cols", 70);
+            newbutton.id='newbutton';
+            newinput.id='newinput';
+            dumbbr.id='dumbbr';      
+            document.getElementById('source_id').appendChild(newinput);
+            document.getElementById('source_id').appendChild(dumbbr);
+            document.getElementById('source_id').appendChild(newbutton);
+            newbutton.onclick = Finish;
         }
         };
 
