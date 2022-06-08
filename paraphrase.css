@@ -1,8 +1,10 @@
-.headers {
+.main_stuff {
     text-align: center;
+    border: 3px purple;
+    background-color: rgb(247, 191, 247);
 }
 
-.Drop-Down_Box {
+.main_stuff .Drop-Down_Box {
     text-align: center;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -16,6 +18,13 @@
     margin-top: 10px;
 }
 
+.part2 {
+    border: 2px black;
+    background-color: rgb(230, 205, 173);
+    margin: auto;
+    width: 80%;
+    margin-top: 10px;
+}
 .question_sentence {
     font-size: 14pt;
     text-align: left;
@@ -40,9 +49,12 @@
 
 .example_ask_button {
     font-size: 14pt;
-    background-color: darkgray;
+    background-color: rgb(255, 0, 0);
+    color:rgb(255, 255, 255);
     border: 2px;
     border-color: blue;
+    text-align: center;
+    margin: auto;
 }
 
 .example_answer {
@@ -54,14 +66,43 @@
     border: 3px;
     border-color: black;
     width: 80%;
-    background-color: rgb(235, 193, 253);
+    background-color: rgb(220, 253, 193);
     text-align: center;
     margin: auto;
+    margin-top: 10px;
+}
+
+.Extra {
+    border: 3px;
+    border-color: black;
+    width: 80%;
+    background-color: rgb(253, 193, 193);
+    text-align: center;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.part1 .check_buttons2 {
+    margin: auto;
+    text-align: center;
+}
+
+.part2 .check_buttons2 {
+    margin: auto;
+    text-align: center;
 }
 
 .check_button {
     font-size: 14pt;
-    background-color: rgb(22, 56, 2);
+    background-color: rgb(12, 32, 0);
+    color:rgb(255, 255, 255);
+    margin-top: 10px;
+    margin: auto;
+}
+
+.check_button2 {
+    font-size: 14pt;
+    background-color: rgb(99, 12, 0);
     color:rgb(255, 255, 255);
     margin-top: 10px;
     margin: auto;

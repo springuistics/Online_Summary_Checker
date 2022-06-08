@@ -10,9 +10,9 @@ const original_passage = "";
 var source_1 = "";
 var source_2 = "Please select a passage from the drop-down menu above. The first two passages come from the summarizing worksheet that accompanies Pathways to Academic English 3rd Edition.";
 
-
 //Selects Passage
 function GetPassage() {
+    document.getElementById('alltheresults').style.display="none";
     var picker = document.getElementById('passage_select').value;
     if (picker == "Passage1") {
         document.getElementById('source_text').style.display="block";
@@ -25,6 +25,7 @@ function GetPassage() {
         newinput2.remove();
         newbutton2.parentNode.removeChild(newbutton2);
         dumbbr2.parentNode.removeChild(dumbbr2);
+        
     }
     else if (picker == "Passage2") {
         document.getElementById('source_text').style.display="block";
@@ -43,18 +44,30 @@ function GetPassage() {
         var newinput = document.createElement("textarea");
         var newbutton = document.createElement("input");
         var dumbbr = document.createElement("br");
+        var reset_button = document.createElement("input");
         newbutton.setAttribute("type", "button");
         newbutton.setAttribute("value", "Click Here to Set the Text");
         newinput.setAttribute("rows", 20);
         newinput.setAttribute("cols", 70);
+        reset_button.setAttribute("type", "button");
+        reset_button.setAttribute("value", "Click Here to Reset the Text");
+        reset_button.setAttribute("style", "display: none");
         newbutton.id='newbutton';
         newinput.id='newinput';
         dumbbr.id='dumbbr';
+        reset_button.id='reset_button';        
         document.getElementById('source_id').appendChild(newinput);
         document.getElementById('source_id').appendChild(dumbbr);
         document.getElementById('source_id').appendChild(newbutton);
+        document.getElementById('source_id').appendChild(reset_button);
         newbutton.onclick = Finish;
+        reset_button.onclick = Reset;
         function Finish() {
+            let dumbcheck = document.getElementById('newinput').value;
+            if (dumbcheck === "") {
+                alert("Please input text before clicking the button.")
+            } else {
+            document.getElementById('reset_button').style.display="block";
             let newinput2 = document.getElementById('newinput');
             let newbutton2 = document.getElementById('newbutton');
             let dumbbr2 = document.getElementById('dumbbr');
@@ -66,6 +79,25 @@ function GetPassage() {
             dumbbr2.parentNode.removeChild(dumbbr2);
             document.getElementById('source_text').style.display="block";
             }
+        }
+        function Reset() {
+            document.getElementById('reset_button').style.display="none";
+            document.getElementById('source_text').style.display="none";
+            var newinput = document.createElement("textarea");
+            var newbutton = document.createElement("input");
+            var dumbbr = document.createElement("br");
+            newbutton.setAttribute("type", "button");
+            newbutton.setAttribute("value", "Click Here to Set the Text");
+            newinput.setAttribute("rows", 20);
+            newinput.setAttribute("cols", 70);
+            newbutton.id='newbutton';
+            newinput.id='newinput';
+            dumbbr.id='dumbbr';      
+            document.getElementById('source_id').appendChild(newinput);
+            document.getElementById('source_id').appendChild(dumbbr);
+            document.getElementById('source_id').appendChild(newbutton);
+            newbutton.onclick = Finish;
+        }
         };
 
 }
@@ -77,6 +109,7 @@ document.getElementById('source_text').innerHTML=source_2;
 }
 
 function Check_Now(){
+    document.getElementById('alltheresults').style.display="block";
     var source_3grams = [];
     var source_5grams = [];
     var input_3grams = [];
@@ -159,45 +192,63 @@ function Check_Now(){
         }
     }
 //display results and give advice
-    var repeats_3 = ohno_3grams.toString();
-    var repeats_5 = ohno_5grams.toString();
+    var repeats_5 = ohno_5grams.join(', ');
     var summary_length = input_array.length;
     var original_length = source_array.length;
     var percentage = 0;
     var percentage_3 = 0;
     if (summary_length > 0) {
-        percentage_3 = counter / summary_length;
+        percentage_3 = ((counter / summary_length)).toFixed(4);
     }
     if (original_length > 0) {
         percentage = summary_length / original_length;
     }
     var advice_length = "";
+    var advice_length2 = "";
     var advice_repeats1 = "";
     var advice_repeats2 = "";
+    var originality_3 = (1- percentage_3).toFixed(4);
+    var xValues = ["Percent Repeated", "Percent Original Writing"];
+    var yValues = [percentage_3, originality_3];
+    var barColors = ["red", "blue"]
+    new Chart("myChart", {type: "doughnut", data: {labels: xValues, datasets: [{backgroundColor: barColors, data: yValues}]},options: {title: {display: true, text: "Percentage of Your Summary that was Original Writing"}}});
+    var xBars = ["Maximum Appropriate Length", "Your Text Length", "Minimum Appropriate Length"];
+    var yBars = [(original_length*0.4).toFixed(0), summary_length, (original_length*0.25).toFixed(0)];
+    var barColors2 = ["green", "red", "blue", "red"];
+    new Chart("myLength", {type: "bar", data: {labels: xBars, datasets: [{backgroundColor: barColors2, data: yBars, minBarLength: 10, label: 'Number of Words:'}]},options: {title: {display: true, text: "Length of Original Text Versus Your Summary"}}});
+    
     if (percentage < 0.25) {
-        advice_length = "Summary Length: Your summary is too short. A good summary is about 25%-35% the length of the orignial text. Try to include a few more details about main points."
+        advice_length = "Your summary is too short."
+        advice_length2 = "A good summary is about 25%-35% the length of the orignial text. Try to include a few more details about main points."
     }
     else if (percentage > 0.4) {
-        advice_length = "Summary Length: Your summary is too long. A good summary is about 25%-35% the length of the orignial text. Try to reduce some details without deleting any of the main points."
+        advice_length = "Your summary is too long."
+        advice_length2 = "A good summary is about 25%-35% the length of the orignial text. Try to reduce some details without deleting any of the main points."    
     }
     else {
-        advice_length = "Summary Length: Good job! A good summary, like yours, is about 25%-35% the length of the orignial text."
+        advice_length = "Good summary length!"
+        advice_length2 = "A good summary is about 25%-35% the length of the orignial text."
+    }
+    if (counter5 > 0 | percentage_3 > 0.1) {
+        advice_repeats1 = "Your summary repeats too much of the original text."
+    } else {
+        advice_repeats1 = "Your summary doesn't repeat too much of the original text!"
     }
     if (counter5 > 0) {
-        advice_repeats1 = "Your summary contains " + counter5 + " instances of 5-word chunk repeats from the original. Copying five or more words from an original text is not recommended. Please rewrite or paraphrase those sections using the advice in Chapter 4 of Pathways to Academic English."
+        advice_repeats2 = "Your summary contains " + counter5 + " five-word chunk repeats from the original! You should never copy five or more words from the original! "
+        resulty = repeats_5;
+    } else {
+        resulty = "None - good job!"
     }
-    else {
-        advice_repeats1 = "Good job! Your summary does not contain any instances of 5-word chunk repeats from the original."
-    }
+
     if (percentage_3 > 0.1) {
-        advice_repeats2 = "Your summary contains " + counter + " instances of 3-word chunk repeats from the original, which is too many. Try to rephrase some of your repeated 3-word chunks by using the advice in Chapter 4 of Pathways to Academic English."
+        advice_repeats2 = advice_repeats2 + "Your summary also contains too many 3-word chunk repeats from the original. Use more paraphrasing techniques as suggested in Chapter 4 of Pathways to Academic English."
     }
-    else {
-        advice_repeats2 = "Your summary contains only " + counter + " instances of 3-word chunk repeats from the original, which is an acceptable amount of repetition."
-    }
-
-    var resulty = advice_length + "<br>" + "<br>" + advice_repeats1 + "<br>" + "<br>" + advice_repeats2 + "<br>" + "<br>" + "Your 5-word chunk repeats:" + "<br>" + "<br>" + repeats_5 + "<br>" + "<br>" + "Your 3-word chunk repeats:" + "<br>" + "<br>" + repeats_3;
-
-    document.getElementById('results_text').innerHTML = resulty;
+   
+    document.getElementById('results_length').innerHTML = advice_length;
+    document.getElementById('length_advice').innerHTML = advice_length2;
+    document.getElementById('results_repeating').innerHTML = advice_repeats1;
+    document.getElementById('repeats_advice').innerHTML = advice_repeats2;
+    document.getElementById('repeats_text').innerHTML = resulty;
 }
 
