@@ -278,7 +278,7 @@ function CheckExtra(){
         if (e1_answer.includes("captivity")){
             e1_feedback = e1_feedback + "Change the part of speech of 'captivity.' Consider changing it to the verb form. "
         }
-        if (e2_answer.includes("America")){
+        if (!e2_answer.includes("American")){
             e2_feedback = e2_feedback + "Change the part of speech of 'America.' Consider making it an adjective using the '-ian' suffix. "
         }
         if (e2_answer.includes("intense")){
