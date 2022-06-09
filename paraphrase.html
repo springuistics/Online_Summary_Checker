@@ -1,0 +1,271 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link href="paraphrase.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="main_stuff">
+        <h1>Pathways to Academic English Practice</h1>
+        <h2 style="color: purple">Paraphrasing Practice</h2>
+        <div class="Drop-Down_Box">
+            <label for="passage_select" style="font-weight: bold">What do you want to work on today?</label>
+            <br>
+            <select id="passage_select" onchange="GetPassage()">
+                <option value="default">Select Practice</option>
+                <option value="Part1">Pathways Worksheet "Paraphrasing Practice" Part 1</option>
+                <option value="Part2">Pathways Worksheet "Paraphrasing Practice" Part 2</option>
+                <option value="Extra_Practice">Step By Step Practice</option>
+                <option value="Custom">Enter My Own Text</option>
+            </select>
+        </div>
+        <br>
+    </div>
+
+
+        <div class="part1" id="part1_div" style="display:none">
+            <label for="p1q1" class="question_sentence" id="p1q1_label"><br><b><u>Directions:</b></u>
+                <br>Change the voice of the <b>bolded</b> words. Change the part of speech of the <u>underlined</u> words. 
+                <p><p style="color: purple;"><b>Change the voice</b> means for example, to change a sentence from active (SVO) to passive (OVS) or vice versa. <br><br> <u>Change the part of speech</u> means to add or subtract suffixes to, for example, change word from a noun to an adjective.</p>
+                <hr style="height:3px">
+                <br>
+                1. Many scholars have claimed that starting the school day later in the morning <b>will increase</b> students' ability to pay attention.</label>
+                <br>
+                <input type="text" class="answer_box" id="p1q1" placeholder="Type your paraphrase here.">
+                    <br>
+                    <div id="answeredp1q1" style="display:none">
+                    <br>
+                    <label for="p1q1_feedback" class="feedback_label">Advice:</label><p id="p1q1_feedback" class="feedback">Feedback goes here.</p><button id="p1q1_button" class="example_ask_button" onclick="Getp1q1()">See Example Answer</button>
+                    </div>
+                <p id="p1q1_example" class="example_answer" style="display:none">Many scholars have claimed that students' ability to pay attention <b>will be increased</b> by starting the school day later in the morning.</p>
+                <br>
+<br>
+            <label for="p1q2" class="question_sentence" id="p1q2_label">2. Raising taxes, cutting spending, and relying more on volunteers <b>improve</b> social structures.</label>
+                <br>
+                <input type="text" class="answer_box" id="p1q2" placeholder="Type your paraphrase here.">
+                    <br>
+                    <div id="answeredp1q2" style="display:none">
+                        <br>
+                    <label for="p1q2_feedback" class="feedback_label">Advice:</label><p id="p1q2_feedback" class="feedback">Feedback goes here.</p><button id="p1q2_button" class="example_ask_button" onclick="Getp1q2()">See Example Answer</button>
+                    </div>
+                <p id="p1q2_example" class="example_answer" style="display:none">Social structures are <b>improved by</b> raising taxes, cutting spending, and relying more on volunteers.</p>
+                <br>
+<br>
+                <label for="p1q3" class="question_sentence" id="p1q3_label">3. English is either an <u>officially used</u> language or one of several languages used in almost 60 countries, and is learned <u>in an extensive amount</u> as a second language.</label>
+                <br>
+                <input type="text" class="answer_box" id="p1q3" placeholder="Type your paraphrase here.">
+                    <br>
+                    <div id="answeredp1q3" style="display:none">
+                        <br>
+                    <label for="p1q3_feedback" class="feedback_label">Advice:</label><p id="p1q3_feedback" class="feedback">Feedback goes here.</p><button id="p1q3_button" class="example_ask_button" onclick="Getp1q3()">See Example Answer</button>
+                    </div>
+                <p id="p1q3_example" class="example_answer" style="display:none">English is either an <u>official</u> language or one of several languages used in almost 60 countries, and is learned <u>extensively</u> as a second language.</p>
+                <br>
+<br>
+                <label for="p1q4" class="question_sentence" id="p1q4_label">4. Self-concept, <u>a collection of</u> beliefs about oneself, is <u>different</u> from self-awareness, which refers to <u>how consistent</u> knowledge of the real world is to one's attitudes and dispositions.</label>
+                <br>
+                <input type="text" class="answer_box" id="p1q4" placeholder="Type your paraphrase here.">
+                    <br>
+                    <div id="answeredp1q4" style="display:none">
+                        <br>
+                    <label for="p1q4_feedback" class="feedback_label">Advice:</label><p id="p1q4_feedback" class="feedback">Feedback goes here.</p><button id="p1q4_button" class="example_ask_button" onclick="Getp1q4()">See Example Answer</button>
+                    </div>
+                <p id="p1q4_example" class="example_answer" style="display:none">Self-concept, a <u>collective</u> belief about oneself, <u>differs</u> from self-awareness, which refers to <u>consistency</u> between knowledge of the real world and one's attitudes and dispositions.</p>
+                <br>
+<br>
+                <label for="p1q5" class="question_sentence" id="p1q5_label">5. <i>Acer leipoense</i>, a species of Maple tree that grows in the <u>southwest</u> part of China, <b>is often sought</b> by people who live <u>locally</u> in Sichuan.</label>
+                <br>
+                <input type="text" class="answer_box" id="p1q5" placeholder="Type your paraphrase here.">
+                    <br>
+                    <div id="answeredp1q5" style="display:none">
+                        <br>
+                    <label for="p1q5_feedback" class="feedback_label">Advice:</label><p id="p1q5_feedback" class="feedback">Feedback goes here.</p><button id="p1q5_button" class="example_ask_button" onclick="Getp1q5()">See Example Answer</button>
+                    </div>
+                <p id="p1q5_example" class="example_answer" style="display:none"><u>Local people (or locals)</u> living in Sichuan <b>often seek</b> <i>Acer leipoense</i>, a species of Maple tree that grows in <u>southwestern</u> China.</p>
+                <br>
+<br>
+                <label for="p1q6" class="question_sentence" id="p1q6_label">6. The red-billed streamertail, a member of the hummingbird family, <u>generally</u> <b>feeds</b> on the nectar from flowers indigenous to Jamaica.</label>
+                <br>
+                <input type="text" class="answer_box" id="p1q6" placeholder="Type your paraphrase here.">
+                    <br>
+                    <div id="answeredp1q6" style="display:none">
+                        <br>
+                    <label for="p1q6_feedback" class="feedback_label">Advice:</label><p id="p1q6_feedback" class="feedback">Feedback goes here.</p><button id="p1q6_button" class="example_ask_button" onclick="Getp1q6()">See Example Answer</button>
+                    </div>
+                <p id="p1q6_example" class="example_answer" style="display:none"><u>In general</u>, the nectar from flowers indigenous to Jamaica <b>are fed on</b> by the red-billed steamertail, a member of the hummingbird family.</p>
+                <br>
+<br>
+                <label for="p1q7" class="question_sentence" id="p1q7_label">7. The Kidston Dam <b>provided</b> water for the Kidston Gold Mine, which closed in 2001.</label>
+                <br>
+                <input type="text" class="answer_box" id="p1q7" placeholder="Type your paraphrase here.">
+                    <br>
+                    <div id="answeredp1q7" style="display:none">
+                        <br>
+                    <label for="p1q7_feedback" class="feedback_label">Advice:</label><p id="p1q7_feedback" class="feedback">Feedback goes here.</p><button id="p1q7_button" class="example_ask_button" onclick="Getp1q7()">See Example Answer</button>
+                    </div>
+                <p id="p1q7_example" class="example_answer" style="display:none">Water for the Kidston Gold Mine, which closed in 2001, <b>was provided</b> by the Kidston Dam.</p>
+                <br>
+<br>
+                <label for="p1q8" class="question_sentence" id="p1q8_label">8. The Confederate Army of Northern Virginia made a retreat from the city of Gettysburg because it <b>was defeated</b> by the Union Army, and now the event <b>is remembered</b> by us as The Retreat from Gettysburg.</label>
+                <br>
+                <input type="text" class="answer_box" id="p1q8" placeholder="Type your paraphrase here.">
+                    <br>
+                    <div id="answeredp1q8" style="display:none">
+                        <br>
+                    <label for="p1q8_feedback" class="feedback_label">Advice:</label><p id="p1q8_feedback" class="feedback">Feedback goes here.</p><button id="p1q8_button" class="example_ask_button" onclick="Getp1q8()">See Example Answer</button>
+                    </div>
+                <p id="p1q8_example" class="example_answer" style="display:none">The Confederate Army of Northern Virginia retreated from the city of Gettysburg because the Union Army <b>defeated</b> it, and now we <b>remember</b> the event as The Retreat from Gettysburg.</p>
+                <br>
+        <div class="check_buttons2"><button id="check_part1" class="check_button" onclick="CheckPart1()">Check Answers</button></div>
+        </div>
+<br>
+        <div class="part2" id="part2_div" style="display:none"><br><b><u>Directions:</b></u>
+            <br>Exchange the <b>bolded</b> words with a synonym. Reduce the <u>underlined</u> clauses. 
+            <p><p style="color: purple;">An appropriate <b>synonym</b> can be found in your "Pathways to Academic English, 3rd Edition" textbook on pages 12-14, or on various thesauruses. May special attention that the synonym you choose is of the same part of speech (noun, adjective, etc.) and of a similar connotation.<br><br> <u>Clauses can be reduced</u> by first finding and removing the relative pronoun (who, what, that, where, etc.), removing unnecessary verbs, and moving words or utilizing commas.  </p>
+            <hr style="height:3px">
+            <br>
+            <label for="p2q1" class="question_sentence" id="p2q1_label">1. The SS Bury was a passenger <b>vessel</b> <u>that was built</u> to help with Britain's Great Central Railway in 1911.</label>
+                <br>
+                <input type="text" class="answer_box" id="p2q1" placeholder="Type your paraphrase here.">
+                    <br>
+                    <div id="answeredp2q1" style="display:none">
+                        <br>
+                    <label for="p2q1_feedback" class="feedback_label">Advice:</label><p id="p2q1_feedback" class="feedback">Feedback goes here.</p><button id="p2q1_button" class="example_ask_button" onclick="Getp2q1()">See Example Answer</button>
+                    </div>
+                <p id="p2q1_example" class="example_answer" style="display:none">The SS Bury was a passenger <b>ship</b> <u>built</u> to assist with Britain's Great Central Railway in 1911.</p>
+                <br>
+                <br>
+                <label for="p2q2" class="question_sentence" id="p2q2_label">2. George Perrottet, <u>who was a botanist from Switzerland</u>, took <b>special</b> interest in plants of <b>economic importance</b> and researching <u>how to improve them.</u></label>
+                    <br>
+                    <input type="text" class="answer_box" id="p2q2" placeholder="Type your paraphrase here.">
+                        <br>
+                        <div id="answeredp2q2" style="display:none">
+                            <br>
+                        <label for="p2q2_feedback" class="feedback_label">Advice:</label><p id="p2q2_feedback" class="feedback">Feedback goes here.</p><button id="p2q2_button" class="example_ask_button" onclick="Getp2q2()">See Example Answer</button>
+                        </div>
+                    <p id="p2q2_example" class="example_answer" style="display:none">George Perrottet, <u>a botanist from Switzerland</u>, took <b>particular</b> interest in plants of <b>monetary significance</b> and researching <u>their improvement.</u></p>
+                    <br>
+                    <br>
+                    <label for="p2q3" class="question_sentence" id="p2q3_label"> 3. Maurice Stacey was a British chemist who worked <b>alongside</b> Norman Haworth <u>and they artificially <b>synthesized</b> Vitamin C.</u></label>
+                        <br>
+                        <input type="text" class="answer_box" id="p2q3" placeholder="Type your paraphrase here.">
+                            <br>
+                            <div id="answeredp2q3" style="display:none">
+                                <br>
+                            <label for="p2q3_feedback" class="feedback_label">Advice:</label><p id="p2q3_feedback" class="feedback">Feedback goes here.</p><button id="p2q3_button" class="example_ask_button" onclick="Getp2q3()">See Example Answer</button>
+                            </div>
+                        <p id="p2q3_example" class="example_answer" style="display:none">Maurice Stacey was a British chemist who worked <b>with</b> Norman Haworth <u>to artificially <b>create</b> Vitamin C.</u></p>
+                        <br>
+                        <br>
+                        <label for="p2q4" class="question_sentence" id="p2q4_label"> 4. Buffalo Bill was the name <u>that was given to</u> a <b>famous</b> American soldier and <b>showman</b> <u>who was active from 1860 to 1917.</u></label>
+                            <br>
+                            <input type="text" class="answer_box" id="p2q4" placeholder="Type your paraphrase here.">
+                                <br>
+                                <div id="answeredp2q4" style="display:none">
+                                    <br>
+                                <label for="p2q4_feedback" class="feedback_label">Advice:</label><p id="p2q4_feedback" class="feedback">Feedback goes here.</p><button id="p2q4_button" class="example_ask_button" onclick="Getp2q4()">See Example Answer</button>
+                                </div>
+                            <p id="p2q4_example" class="example_answer" style="display:none">Buffalo Bill was the name <u>given</u> to a <b>renowned</b> American soldier and <b>performer</b> <u>active from 1860 to 1917.</u></p>
+                            <br>
+                            <br>
+                            <label for="p2q5" class="question_sentence" id="p2q5_label"> 5. Literary Review is a British magazine <u>that was <b>founded</b></u> in 1979 by Anne Smith and that publishes people’s opinions on <b>a number of</b> books from many <b>different</b> genres.</label>
+                                <br>
+                                <input type="text" class="answer_box" id="p2q5" placeholder="Type your paraphrase here.">
+                                    <br>
+                                    <div id="answeredp2q5" style="display:none">
+                                        <br>
+                                    <label for="p2q5_feedback" class="feedback_label">Advice:</label><p id="p2q5_feedback" class="feedback">Feedback goes here.</p><button id="p2q5_button" class="example_ask_button" onclick="Getp2q5()">See Example Answer</button>
+                                    </div>
+                                <p id="p2q5_example" class="example_answer" style="display:none">Literary Review is a British magazine <u><b>established</u></b> in 1979 by Anne Smith that publishes people’s opinions on <b>numerous</b> books from many <b>varying</b> genres.</p>
+                                <br>
+                                <br>
+                                <label for="p2q6" class="question_sentence" id="p2q6_label"> 6. The Great Sandy Strait, <u>which can be found in the Australian state of Queensland</u>, is <u><b>popular</b> as a place for tourists to go to</u>, where people can enjoy many leisure activities. </label>
+                                    <br>
+                                    <input type="text" class="answer_box" id="p2q6" placeholder="Type your paraphrase here.">
+                                        <br>
+                                        <div id="answeredp2q6" style="display:none">
+                                            <br>
+                                        <label for="p2q6_feedback" class="feedback_label">Advice:</label><p id="p2q6_feedback" class="feedback">Feedback goes here.</p><button id="p2q6_button" class="example_ask_button" onclick="Getp2q6()">See Example Answer</button>
+                                        </div>
+                                    <p id="p2q6_example" class="example_answer" style="display:none">The Great Sandy Strait, <u>in the Australian state of Queensland</u>, is <u><b>a well-liked</b> place for tourists to go</u>, where people can participate in various leisure activities.</p>
+                                    <br>
+                                    <br>
+                                    <label for="p2q7" class="question_sentence" id="p2q7_label"> 7. A magneto-optical drive is a <b>kind</b> of computer device <u>that can write and rewrite data</u> <b>upon</b> a special disc. </label>
+                                        <br>
+                                        <input type="text" class="answer_box" id="p2q7" placeholder="Type your paraphrase here.">
+                                            <br>
+                                            <div id="answeredp2q7" style="display:none">
+                                                <br>
+                                            <label for="p2q7_feedback" class="feedback_label">Advice:</label><p id="p2q7_feedback" class="feedback">Feedback goes here.</p><button id="p2q7_button" class="example_ask_button" onclick="Getp2q7()">See Example Answer</button>
+                                            </div>
+                                        <p id="p2q7_example" class="example_answer" style="display:none"> A magneto-optical drive is a <b>type</b> of computer device <u>capable of writing and rewriting data</u> <b>on</b> a special disc.</p>
+                                        <br>
+                                        <br>
+                                        <label for="p2q8" class="question_sentence" id="p2q8_label"> 8. Date Masamune, <u>who was the <b>monarch</b> of his <b>area</b></u> in Japan’s Azuchi-Mmoyama period, is often <b>credited with</b> increasing the population and <b>recognition</b> <u>of the city of Sendai.</u> </label>
+                                            <br>
+                                            <input type="text" class="answer_box" id="p2q8" placeholder="Type your paraphrase here.">
+                                                <br>
+                                                <div id="answeredp2q8" style="display:none">
+                                                    <br>
+                                                <label for="p2q8_feedback" class="feedback_label">Advice:</label><p id="p2q8_feedback" class="feedback">Feedback goes here.</p><button id="p2q8_button" class="example_ask_button" onclick="Getp2q8()">See Example Answer</button>
+                                                </div>
+                                            <p id="p2q8_example" class="example_answer" style="display:none"> Date Masamune, <u>the <b>ruler</b> of his <b>prefecture</b></u> in Japan’s Azuchi-Mmoyama period, is often <b>said to have</b> increased the population and <b>fame</b> <u>of Sendai city.</u></p>
+                                            <br>
+<br>
+
+
+
+        <div class="check_buttons2"><button id="check_part2" style="margin: auto" class="check_button" onclick="CheckPart2()">Check Answers</button></div>
+        </div>
+        
+        <div class="Extra" id="extra_practice" style="display:none">
+            <h3 id="extra_directions">Begin by changing the parts of speech of the underlined words</h3>
+            <br>
+            <label for="eq1" class="question_sentence" id="eq1_label">While it is a <u>rarity</u> for orcas to attack humans in the wild, four humans have been killed due to <u>interacting</u> with orcas that were in <u>captivity.</u></label>
+            <br>
+            <input type="text" class="answer_box" id="eq1" placeholder="Type your paraphrase here.">
+            <br>
+            <br>
+            <div id="answeredeq1" style="display:none">
+                <label for="eq1_feedback" class="feedback_label">Advice:</label><p id="eq1_feedback" class="feedback">Feedback goes here.</p><button id="eq1_button" class="example_ask_button" onclick="GetEq1P1()">See Example Answer</button>
+            </div>
+            <p id="eq1p1_example" class="example_answer" style="display:none">The first sentence answer should go here.</p>
+            <br>
+        
+            <label for="eq2" class="question_sentence" id="eq2_label">David Scott, who is an astronaut from <u>America</u>, was accepted into the US Military Academy in 1954, and he became the seventh person to walk on the moon in 1967 thanks to the <u>intense</u> training that he received there.</label>
+            <br>
+            <input type="text" class="answer_box" id="eq2" placeholder="Type your paraphrase here.">
+            <br>
+            <br>
+            <div id="answeredeq2" style="display:none">
+                <label for="eq2_feedback" class="feedback_label">Advice:</label><p id="eq2_feedback" class="feedback">Feedback goes here.</p><button id="eq2_button" class="example_ask_button" onclick="GetEq1P2()">See Example Answer</button>
+            </div>
+            <p id="eq1p2_example" class="example_answer" style="display:none">The first sentence answer should go here.</p>
+            <br>
+        <div id="button_container" style="margin:auto; text-align: center">
+        <button id="check_extra_back" class="check_button2" onclick="CheckExtraBK()" style="display:none">Previous Stage</button>
+        <button id="check_extra" class="check_button" onclick="CheckExtra()">Check Answers</button>
+        <button id="check_extra_next" class="check_button2" onclick="CheckExtraNXT()" style="display:none">Next Stage</button>
+        </div>
+        </div>
+
+        <div class="custom" id="custom_practice" style="display:none">
+            <label for="cq1" class="question_sentence">Write or copy-and-paste your original sentence here:</label>
+            <br>
+            <textarea id="cq1" class="custom_box" rows="3" cols="70" placeholder="Write or copy-and-paste your original sentence here"></textarea>
+            <br>
+            <br>
+            <label for="cqa" class="question_sentence">Write your paraphrase here:</label>
+            <br>
+            <textarea id="cqa" class="custom_box" rows="3" cols="70" placeholder="Write your paraphrase here"></textarea>
+            <br>
+            <br>
+            <button id="check_custom" class="check_button" onclick="CheckCustom()">Check Paraphrase</button>
+            <p id="cq_feedback" class="example_answer" style="display:none">Feedback will go here.</p>
+
+        </div>
+    </div>
+    <script type="text/javascript" src="paraphrase.js"></script>
+</body>
+
+
+</html>
