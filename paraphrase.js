@@ -59,12 +59,14 @@ function ActuallyCheckP1 (){
     if (q1_answer.includes("will be increased by")) {
         q1_feedback = "Good job changing to passive voice. "
     } else { q1_feedback = "Change 'will increase' to 'will be increased by' and move 'students' ability to pay attention' to the subject position after the word 'that.' "}
+
     document.getElementById('p1q1_feedback').innerHTML=q1_feedback;
     //q2
     var q2_answer = document.getElementById('p1q2').value;
     var q2_feedback = "";
     if (q2_answer.includes("are improved by")) {
         q2_feedback = "Good job changing to passive voice."
+
     } else { q2_feedback = "Change 'improve' to 'are improved by' and move 'social structures' to the subject position. "}
     document.getElementById('p1q2_feedback').innerHTML=q2_feedback;
     //q3
@@ -103,6 +105,7 @@ function ActuallyCheckP1 (){
     var q5_answer = document.getElementById('p1q5').value;
     var q5_feedback = "";
     if (q5_answer.includes("southwest")) {
+
         q5_feedback = q5_feedback + "'Southwest' could to be changed to 'southwestern'. "
     } 
     if (q5_answer.includes("locally")){
@@ -182,6 +185,7 @@ function ActuallyCheckP2() {
     //q1
     var q1_answer = document.getElementById('p2q1').value;
     var q1_feedback = "";
+
     if (q1_answer.includes("vessel")) {
        let hateyou = "https://www.thesaurus.com/browse/vessel";
        let hateyoumore = hateyou.link("https://www.thesaurus.com/browse/vessel");
@@ -196,6 +200,7 @@ function ActuallyCheckP2() {
         q1_feedback = q1_feedback + "Reduce the phrase 'that was built' to 'built' "
     }
     if (q1_feedback == "") {
+
         q1_feedback = "Compare your paraphrase with the example sentence."
     }
     document.getElementById('p2q1_feedback').innerHTML=q1_feedback;
@@ -385,6 +390,7 @@ if (q8_answer.includes("credited with")) {
 
 
 
+
 document.getElementById('check_part2').innerHTML="Re-check Answers";
 }
 
@@ -442,10 +448,8 @@ function Getp2q8() {
 }
 
 
-function hidebutton(x)
-{
-    x.style.display = "none";
-}
+
+
 
 var stageNo = 0;
 
@@ -515,6 +519,7 @@ function CheckExtra(){
         }
         if (e2_answer === "") {
             e2_feedback = "Compare your paraphrase with the example sentence."
+
         }
         document.getElementById('eq1_feedback').innerHTML=e1_feedback;
         document.getElementById('eq2_feedback').innerHTML=e2_feedback;
@@ -535,6 +540,7 @@ function CheckExtra(){
         }
         if (e1_answer.includes("it is")){
             e1_feedback = e1_feedback + "Delete the pronoun subject 'it' and reduce to a complex noun phrase. Hint: '.... on humans'. "
+
         }
         if (e1_answer.includes("that were")){
             e1_feedback = e1_feedback + "Reduce the phrase 'orcas that were captive' by moving 'captive' to an adjective position in front of 'orcas.' "
