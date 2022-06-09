@@ -57,101 +57,104 @@ function ActuallyCheckP1 (){
     var q1_answer = document.getElementById('p1q1').value;
     var q1_feedback = "";
     if (q1_answer.includes("will be increased by")) {
-        q1_feedback = "Good job changing to passive voice."
-    } else { q1_feedback = "Change 'will increase' to 'will be increased by' and move 'students' ability to pay attention' to the subject position after the word 'that' "}
+        q1_feedback = "Good job changing to passive voice. "
+    } else { q1_feedback = "Change 'will increase' to 'will be increased by' and move 'students' ability to pay attention' to the subject position after the word 'that.' "}
+
     document.getElementById('p1q1_feedback').innerHTML=q1_feedback;
     //q2
     var q2_answer = document.getElementById('p1q2').value;
     var q2_feedback = "";
     if (q2_answer.includes("are improved by")) {
         q2_feedback = "Good job changing to passive voice."
-    } else { q2_feedback = "Change 'improve' to 'are improved by' and move 'social structures' to the subject position"}
+
+    } else { q2_feedback = "Change 'improve' to 'are improved by' and move 'social structures' to the subject position. "}
     document.getElementById('p1q2_feedback').innerHTML=q2_feedback;
     //q3
     var q3_answer = document.getElementById('p1q3').value;
     var q3_feedback = "";
     if (!q3_answer.includes("English")){
-        q3_feedback = "The word English should be included. Please make sure you are attempting the paraphrase."
+        q3_feedback = "The word 'English' should be included. This is an important detail. "
     } 
     if (q3_answer.includes("officially")) {
-        q3_feedback = q3_feedback + "Consider changing 'officially' to a word such as 'official'. "
+        q3_feedback = q3_feedback + "Consider removing the -ly averbial suffix from the word 'officially.' "
     } 
     if (q3_answer.includes("extensive")){
-        q3_feedback = q3_feedback + "Consider changing 'extensive' to 'extensively'. "
+        q3_feedback = q3_feedback + "Consider adding an averbial suffix to 'extensive.' "
     }
     if (q3_feedback == "") {
-        q3_feedback = "No advice about the target words and phrases."
+        q3_feedback = "Compare your paraphrase with the example sentence. "
     }
     document.getElementById('p1q3_feedback').innerHTML=q3_feedback;
     //q4
     var q4_answer = document.getElementById('p1q4').value;
     var q4_feedback = "";
     if (q4_answer.includes("collection")) {
-        q4_feedback = q4_feedback + "Consider changing 'collection' to a word such as 'collective' or 'collected'. "
+        q4_feedback = q4_feedback + "Consider adding an adjective-making suffix to 'collection.' "
     } 
     if (q4_answer.includes("different")){
-        q4_feedback = q4_feedback + "Consider changing 'different' to the verb 'differ' or to the noun 'difference'. "
+        q4_feedback = q4_feedback + "Consider using suffixes to change 'different' to a noun or verb. "
     }
     if (q4_answer.includes("consistent")){
-        q4_feedback = q4_feedback + "Consider changing 'consistent' to the noun 'consinstency'. "
+        q4_feedback = q4_feedback + "Consider adding an ajective-making suffix to 'consistent.' "
     }
     if (q4_feedback == "") {
-        q4_feedback = "No advice about the target words and phrases."
+        q4_feedback = "Compare your paraphrase with the example sentence."
     }
     document.getElementById('p1q4_feedback').innerHTML=q4_feedback;
     //q5
     var q5_answer = document.getElementById('p1q5').value;
     var q5_feedback = "";
     if (q5_answer.includes("southwest")) {
-        q5_feedback = q5_feedback + "You can change 'southwest' to 'southwestern'. "
+
+        q5_feedback = q5_feedback + "'Southwest' could to be changed to 'southwestern'. "
     } 
     if (q5_answer.includes("locally")){
-        q5_feedback = q5_feedback + "Consider changing 'locally' to the adjective 'local' or to the noun 'locals'. "
+        q5_feedback = q5_feedback + "Consider using suffixes to change 'locally' to the adjective or noun. "
     }
     if (q5_answer.includes("sought")){
-        q5_feedback = q5_feedback + "Change to the active voice by moving 'people' to the subject position and 'Acer leiponese' to the object position. The verb should then be 'seek.' "
+        q5_feedback = q5_feedback + "Change the voice to active by moving 'people' to the subject position and 'Acer leiponese' to the object position. The verb should then be 'seek.' "
     }
     if (q5_feedback == "") {
-        q5_feedback = "No advice about the target words and phrases."
+        q5_feedback = "Compare your paraphrase with the example sentence."
     }
     document.getElementById('p1q5_feedback').innerHTML=q5_feedback;
     //q6
     var q6_answer = document.getElementById('p1q6').value;
     var q6_feedback = "";
     if (q6_answer.includes("generally")) {
-        q6_feedback = q6_feedback + "You can change 'generally' to 'in general'. "
+        q6_feedback = q6_feedback + "Consider removing a suffix from 'generally.' "
     } 
     if (q6_answer.includes("feeds") | q6_answer.includes("feed")){
-        q6_feedback = q6_feedback + "Change 'feeds' to the passive voice by making 'flowers' the subject of the sentence and changing 'feeds' to 'are fed on by'. "
+        q6_feedback = q6_feedback + "Make 'flowers' the subject of the sentence and change 'feeds' to the passive 'are fed on by'. "
     }
     if (q6_feedback == "") {
-        q6_feedback = "No advice about the target words and phrases."
+        q6_feedback = "Compare your paraphrase with the example sentence."
     }
     document.getElementById('p1q6_feedback').innerHTML=q6_feedback;
     //q7
     var q7_answer = document.getElementById('p1q7').value;
     var q7_feedback = "";
     if (!q7_answer.includes("was provided by")) {
-        q7_feedback = q7_feedback + "This sentence is in the past tense - be sure to make the passive voice with the phrase 'was provided by'. "
+        q7_feedback = q7_feedback + "This sentence is in the past tense. The passive verb should also be in the past: 'was provided by'. "
     }
     if (q7_feedback == "") {
-        q7_feedback = "No advice about the target words and phrases."
+        q7_feedback = "Compare your paraphrase with the example sentence."
     }
     document.getElementById('p1q7_feedback').innerHTML=q7_feedback;
     //q8
     var q8_answer = document.getElementById('p1q8').value;
     var q8_feedback = "";
     if (q8_answer.includes("was defeated by")) {
-        q8_feedback = q8_feedback + "Make the subject of the first half of the sentence 'the Union Army' and the object 'it' then change the verb to active voice. "
+        q8_feedback = q8_feedback + "Change the subject to be 'the Union Army' and the object to 'it,' then change the verb to active voice. "
     } 
     if (q8_answer.includes("made a retreat")){
-        q8_feedback = q8_feedback + "Consider changing the phrase 'make a retreat' to the simple verb 'retreat'. "
+        q8_feedback = q8_feedback + "Change the phrase 'make a retreat' to the simple verb 'retreat.' "
     }
     if (q8_answer.includes("remembered")){
-        q8_feedback = q8_feedback + "Change to the active voice by moving 'us' to the subject position and 'the event' to the object position. The verb should then be 'remember.' "
+        q8_feedback = q8_feedback + "Move 'us' to the subject position and 'the event' to the object position. The verb should then be 'remember.' "
     }
     if (q8_feedback == "") {
-        q8_feedback = "No advice about the target words and phrases."
+        q8_feedback = "Compare your paraphrase with the example sentence."
     }
     document.getElementById('p1q8_feedback').innerHTML=q8_feedback;
     document.getElementById('check_part1').innerHTML="Re-check Answers";
@@ -182,21 +185,212 @@ function ActuallyCheckP2() {
     //q1
     var q1_answer = document.getElementById('p2q1').value;
     var q1_feedback = "";
-    if (q1_answer.includes("vessl")) {
-        q1_feedback = q1_feedback + "Please find a synonym for 'vessel,' i.e., https://www.thesaurus.com/browse/vessel"
+
+    if (q1_answer.includes("vessel")) {
+       let hateyou = "https://www.thesaurus.com/browse/vessel";
+       let hateyoumore = hateyou.link("https://www.thesaurus.com/browse/vessel");
+        q1_feedback = q1_feedback + "Please find a synonym for 'vessel,' " + hateyoumore ;
     }  
     if (q1_answer.includes("help")) { 
-        q1_feedback = q1_feedback + "Please find a synonym for 'vessel,' i.e., https://www.thesaurus.com/browse/help"
+        let hateyou = "https://www.thesaurus.com/browse/help";
+       let hateyoumore = hateyou.link("https://www.thesaurus.com/browse/help");
+        q1_feedback = q1_feedback + "Please find a synonym for 'help,' " + hateyoumore ;
     }
     if (q1_answer.includes("that was built") | q1_answer.includes("which was built")){
         q1_feedback = q1_feedback + "Reduce the phrase 'that was built' to 'built' "
     }
     if (q1_feedback == "") {
-        q1_feedback = "No advice about the target words and phrases."
+
+        q1_feedback = "Compare your paraphrase with the example sentence."
     }
     document.getElementById('p2q1_feedback').innerHTML=q1_feedback;
 
+    //q2
+    var q2_answer = document.getElementById('p2q1').value;
+    var q2_feedback = "";
+    if (q2_answer.includes("special")) {
+     let hateyou = "https://www.thesaurus.com/browse/special";
+    let hateyoumore = hateyou.link("https://www.thesaurus.com/browse/special");
+     q2_feedback = q2_feedback + "Please find a synonym for 'special,' " + hateyoumore ;
+}  
+    if (q2_answer.includes("enonomic")) { 
+        let hateyou = "https://www.thesaurus.com/browse/economic";
+        let hateyoumore = hateyou.link("https://www.thesaurus.com/browse/economic ");
+     q2_feedback = q2_feedback + "Please find a synonym for 'economic,' " + hateyoumore ;
+    }
+     if (q2_answer.includes("importance")) { 
+        let hateyou = "https://www.thesaurus.com/browse/importance";
+        let hateyoumore = hateyou.link("https://www.thesaurus.com/browse/importance ");
+     q2_feedback = q2_feedback + "Please find a synonym for 'importance,' " + hateyoumore ;
+}
+    if (q2_answer.includes("who was") | q2_answer.includes("who was")){
+        q2_feedback = q2_feedback + "Reduce the phrase 'who was a botanist' to 'a botanist' "
+}
+    if (q2_answer.includes("how to") | q2_answer.includes("how to")){
+        q2_feedback = q2_feedback + "Reduce the phrase 'how to improve them' to 'their improvement' "
+}
+    if (q2_feedback == "") {
+        q2_feedback = "Compare your paraphrase with the example sentence."
+}
+    document.getElementById('p2q2_feedback').innerHTML=q2_feedback;
+
+
+      //q3
+      var q3_answer = document.getElementById('p2q3').value;
+      var q3_feedback = "";
+      if (q3_answer.includes("alongside")) {
+         let hateyou = "https://www.thesaurus.com/browse/alongside";
+         let hateyoumore = hateyou.link("https://www.thesaurus.com/browse/alongside");
+          q3_feedback = q3_feedback + "Please find a synonym for 'alongside,' " + hateyoumore ;
+      }  
+      if (q3_answer.includes("synthesized")) { 
+          let hateyou = "https://www.thesaurus.com/browse/synthesize";
+         let hateyoumore = hateyou.link("https://www.thesaurus.com/browse/synthesize");
+          q3_feedback = q3_feedback + "Please find a synonym for 'synthesized,' " + hateyoumore ;
+      }
+      if (q3_answer.includes("and they artifically")) {
+          q3_feedback = q3_feedback + "Reduce the phrase 'and they artifically' to 'to artifically' "
+      }
+      if (q3_feedback == "") {
+          q3_feedback = "Compare your paraphrase with the example sentence."
+      }
+      document.getElementById('p2q3_feedback').innerHTML=q3_feedback;
     
+
+       //q4
+       var q4_answer = document.getElementById('p2q4').value;
+       var q4_feedback = "";
+       if (q4_answer.includes("famous")) {
+          let hateyou = "https://www.thesaurus.com/browse/famous";
+          let hateyoumore = hateyou.link("https://www.thesaurus.com/browse/famous");
+           q4_feedback = q4_feedback + "Please find a synonym for 'famous,' " + hateyoumore ;
+       }  
+       if (q4_answer.includes("showman")) { 
+           let hateyou = "https://www.thesaurus.com/browse/showman";
+          let hateyoumore = hateyou.link("https://www.thesaurus.com/browse/showman");
+           q4_feedback = q4_feedback + "Please find a synonym for 'showman,' " + hateyoumore ;
+       }
+       if (q4_answer.includes("who was active")) {
+           q4_feedback = q4_feedback + "Reduce the phrase 'who was active' to 'active' "
+       }
+       if (q4_feedback == "") {
+           q4_feedback = "Compare your paraphrase with the example sentence."
+       }
+       document.getElementById('p2q4_feedback').innerHTML=q4_feedback;
+
+
+       //q5
+       var q5_answer = document.getElementById('p2q5').value;
+       var q5_feedback = "";
+       if (q5_answer.includes("founded")) {
+          let hateyou = "https://www.thesaurus.com/browse/founded";
+          let hateyoumore = hateyou.link("https://www.thesaurus.com/browse/founded");
+           q5_feedback = q5_feedback + "Please find a synonym for 'founded,' " + hateyoumore ;
+       }  
+       if (q5_answer.includes("a number of")) { 
+           let hateyou = "https://www.wordhippo.com/what-is/another-word-for/a_number_of.html";
+          let hateyoumore = hateyou.link("https://www.wordhippo.com/what-is/another-word-for/a_number_of.html");
+           q5_feedback = q5_feedback + "Please find a synonym for 'a number of,' " + hateyoumore ;
+       }
+       if (q5_answer.includes("different")) { 
+        let hateyou = "https://www.thesaurus.com/browse/different";
+       let hateyoumore = hateyou.link("https://www.thesaurus.com/browse/different");
+        q5_feedback = q5_feedback + "Please find a synonym for 'different,' " + hateyoumore ;
+    }
+       if (q5_answer.includes("that was")) {
+           q5_feedback = q5_feedback + "Reduce the phrase 'that was' by just deleting it "
+       }
+       if (q5_feedback == "") {
+           q5_feedback = "Compare your paraphrase with the example sentence."
+       }
+       document.getElementById('p2q5_feedback').innerHTML=q5_feedback;
+
+
+       //q6
+       var q6_answer = document.getElementById('p2q6').value;
+       var q6_feedback = "";
+       if (q6_answer.includes("popular")) {
+          let hateyou = "https://www.thesaurus.com/browse/popular";
+          let hateyoumore = hateyou.link("https://www.thesaurus.com/browse/popular");
+           q6_feedback = q6_feedback + "Please find a synonym for 'popular' " + hateyoumore ;
+       }  
+
+       if (q6_answer.includes("many")) { 
+        let hateyou = "https://www.thesaurus.com/browse/many";
+       let hateyoumore = hateyou.link("https://www.thesaurus.com/browse/many");
+        q6_feedback = q6_feedback + "Please find a synonym for 'many,' " + hateyoumore ;
+    }
+       if (q6_answer.includes("which can be found")) {
+           q6_feedback = q6_feedback + "Reduce the phrase 'which can be found ' by just deleting it "
+       }
+
+       if (q6_answer.includes("as a place")) {
+        q6_feedback = q6_feedback + "Reduce the phrase 'as a place ' to 'place' "
+    }
+
+       if (q6_feedback == "") {
+           q6_feedback = "Compare your paraphrase with the example sentence."
+       }
+       document.getElementById('p2q6_feedback').innerHTML=q6_feedback;
+
+
+       //q7
+       var q7_answer = document.getElementById('p2q7').value;
+       var q7_feedback = "";
+       if (q7_answer.includes("kind")) {
+          let hateyou = "https://www.thesaurus.com/browse/kind";
+          let hateyoumore = hateyou.link("https://www.thesaurus.com/browse/kind");
+           q7_feedback = q7_feedback + "Please find a synonym for 'kind' " + hateyoumore ;
+       }  
+
+       if (q7_answer.includes("upon")) { 
+        let hateyou = "https://www.thesaurus.com/browse/upon";
+       let hateyoumore = hateyou.link("https://www.thesaurus.com/browse/upon");
+        q7_feedback = q7_feedback + "Please find a synonym for 'upon,' " + hateyoumore ;
+    }
+       if (q7_answer.includes("that can write and rewrite data")) {
+           q7_feedback = q7_feedback + "Reduce the phrase 'that can write and rewrite data ' by changing it to 'capable of writing and rewriting data'  "
+       }
+
+       document.getElementById('p2q7_feedback').innerHTML=q7_feedback;
+
+  //q8
+  var q8_answer = document.getElementById('p2q8').value;
+  var q8_feedback = "";
+  if (q8_answer.includes("monarch")) {
+     let hateyou = "https://www.thesaurus.com/browse/monarch";
+     let hateyoumore = hateyou.link("https://www.thesaurus.com/browse/monarch");
+      q8_feedback = q8_feedback + "Please find a synonym for 'monarch' " + hateyoumore ;
+  }  
+
+  if (q8_answer.includes("area")) { 
+   let hateyou = "https://www.thesaurus.com/browse/area";
+  let hateyoumore = hateyou.link("https://www.thesaurus.com/browse/area");
+   q8_feedback = q8_feedback + "Please find a synonym for 'area,' " + hateyoumore ;
+}
+if (q8_answer.includes("credited with")) { 
+    let hateyou = "https://www.wordhippo.com/what-is/another-word-for/credited_with.html" ;
+   let hateyoumore = hateyou.link("https://www.wordhippo.com/what-is/another-word-for/credited_with.html" );
+    q8_feedback = q8_feedback + "Please find a synonym for 'credited with,' " + hateyoumore ;
+ }
+ if (q8_answer.includes("recognition")) { 
+    let hateyou = "https://www.thesaurus.com/browse/recognition";
+   let hateyoumore = hateyou.link("https://www.thesaurus.com/browse/recognition");
+    q8_feedback = q8_feedback + "Please find a synonym for 'recognition,' " + hateyoumore ;
+ }
+  if (q8_answer.includes("who was")) {
+      q8_feedback = q8_feedback + "Reduce the phrase 'who was the monarch' by deleting 'who was' "   
+  }
+  if (q8_answer.includes("of the city of Sendai")) {
+    q8_feedback = q8_feedback + "Reduce the phrase 'of the city of Sendai' by changing it to 'of Sendai city' "
+    
+}
+  document.getElementById('p2q8_feedback').innerHTML=q8_feedback;
+
+
+
+
+
 document.getElementById('check_part2').innerHTML="Re-check Answers";
 }
 
@@ -228,29 +422,34 @@ function Getp1q8() {
 
 //Display part 2 Example Sentences in a completely lame way.
 function Getp2q1() {
-    document.getElementById('p1q1_example').style.display="block";
+    document.getElementById('p2q1_example').style.display="block";
+    document.getElementById('p2q1_button').style.display="none";
 }
 function Getp2q2() {
-    document.getElementById('p1q2_example').style.display="block";
+    document.getElementById('p2q2_example').style.display="block";
 }
 function Getp2q3() {
-    document.getElementById('p1q3_example').style.display="block";
+    document.getElementById('p2q3_example').style.display="block";
 }
 function Getp2q4() {
-    document.getElementById('p1q4_example').style.display="block";
+    document.getElementById('p2q4_example').style.display="block";
 }
 function Getp2q5() {
-    document.getElementById('p1q5_example').style.display="block";
+    document.getElementById('p2q5_example').style.display="block";
 }
 function Getp2q6() {
-    document.getElementById('p1q6_example').style.display="block";
+    document.getElementById('p2q6_example').style.display="block";
 }
 function Getp2q7() {
-    document.getElementById('p1q7_example').style.display="block";
+    document.getElementById('p2q7_example').style.display="block";
 }
 function Getp2q8() {
-    document.getElementById('p1q8_example').style.display="block";
+    document.getElementById('p2q8_example').style.display="block";
 }
+
+
+
+
 
 var stageNo = 0;
 
@@ -316,10 +515,11 @@ function CheckExtra(){
             e2_feedback = e2_feedback + "Consider moving 'in 1954' to the beginning of the sentence for ease of reading. "
         }
         if (e1_answer == "") {
-            e1_feedback = "No advice regarding the target words."
+            e1_feedback = "Compare your paraphrase with the example sentence."
         }
         if (e2_answer === "") {
-            e2_feedback = "No advice regarding the target words."
+            e2_feedback = "Compare your paraphrase with the example sentence."
+
         }
         document.getElementById('eq1_feedback').innerHTML=e1_feedback;
         document.getElementById('eq2_feedback').innerHTML=e2_feedback;
@@ -339,7 +539,8 @@ function CheckExtra(){
             e2_feedback = "Please write something first."
         }
         if (e1_answer.includes("it is")){
-            e1_feedback = e1_feedback + "Delete the dummy subject 'it' and reduce to a complex noun phrase. Hint: '.... on humans'. "
+            e1_feedback = e1_feedback + "Delete the pronoun subject 'it' and reduce to a complex noun phrase. Hint: '.... on humans'. "
+
         }
         if (e1_answer.includes("that were")){
             e1_feedback = e1_feedback + "Reduce the phrase 'orcas that were captive' by moving 'captive' to an adjective position in front of 'orcas.' "
@@ -354,10 +555,10 @@ function CheckExtra(){
             e2_feedback = e2_feedback + "Reduce the relative clause 'that he received there' to a noun phrase beginning with 'receiving.'  "
         }
         if (e1_answer == "") {
-            e1_feedback = "No advice regarding the target words."
+            e1_feedback = "Compare your paraphrase with the example sentence."
         }
         if (e2_answer === "") {
-            e2_feedback = "No advice regarding the target words."
+            e2_feedback = "Compare your paraphrase with the example sentence."
         }
         document.getElementById('eq1_feedback').innerHTML=e1_feedback;
         document.getElementById('eq2_feedback').innerHTML=e2_feedback;
@@ -380,7 +581,7 @@ function CheckExtra(){
             e1_feedback = e1_feedback + "Please find a synonym for 'vessel,' i.e., https://www.thesaurus.com/browse/while"
         }
         if (!e1_answer.includes("killer whale")){
-            e1_feedback = e1_feedback + "The common name for an 'orca' is 'killer whale.' "
+            e1_feedback = e1_feedback + "A common name for an 'orca' is 'killer whale.' "
         }
         if (e1_answer.includes("rare")){
             e1_feedback = e1_feedback + "Please find a synonym for 'rare,' i.e., https://www.thesaurus.com/browse/rare"
@@ -401,10 +602,10 @@ function CheckExtra(){
             e2_feedback = e2_feedback + "Please find a synonym for 'thanks to,' i.e., https://www.thesaurus.com/browse/thanks%20to"
         }
         if (e1_answer == "") {
-            e1_feedback = "No advice regarding the target words."
+            e1_feedback = "Compare your paraphrase with the example sentence."
         }
         if (e2_answer === "") {
-            e2_feedback = "No advice regarding the target words."
+            e2_feedback = "Compare your paraphrase with the example sentence."
         }
         document.getElementById('eq1_feedback').innerHTML=e1_feedback;
         document.getElementById('eq2_feedback').innerHTML=e2_feedback;
