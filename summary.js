@@ -215,7 +215,7 @@ function Check_Now(){
     var xBars = ["Maximum Appropriate Length", "Your Text Length", "Minimum Appropriate Length"];
     var yBars = [(original_length*0.4).toFixed(0), summary_length, (original_length*0.25).toFixed(0)];
     var barColors2 = ["green", "red", "blue", "red"];
-    new Chart("myLength", {type: "bar", data: {labels: xBars, datasets: [{backgroundColor: barColors2, data: yBars, minBarLength: 10, label: 'Number of Words:'}]},options: {title: {display: true, text: "Length of Original Text Versus Your Summary"}}});
+    new Chart("myLength", {type: "bar", data: {labels: xBars, datasets: [{backgroundColor: barColors2, data: yBars, minBarLength: 10, label: 'Number of Words:'}]}, options: {scales: {yAxes: [{ticks: {beginAtZero: true}}]}, title: {display: true, text: "Length of Original Text Versus Your Summary"}}});
     
     if (percentage < 0.25) {
         advice_length = "Your summary is too short."
