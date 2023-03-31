@@ -183,16 +183,60 @@ function Check_Now(){
             }
         }
     }
+    var highlighter = [];
     for (let i = 0; i < source_5grams.length; i++){
         for (let j = 0; j < input_5grams.length; j++){
             if (source_5grams[i] === input_5grams[j]) {
                 counter5 = counter5 + 1;
                 ohno_5grams.push(source_5grams[i]);
+                highlighter.push(j);
             }
         }
     }
 //display results and give advice
-    var repeats_5 = ohno_5grams.join(', ');
+    
+    var source_pre_highlight = [];
+    input_array.forEach(function(word, index){
+        let checker_begin5 = index -5;
+        let checker_begin4 = index -4;
+        let checker_begin3 = index -3;
+        let checker_begin2 = index -2;
+        let checker_begin1 = index -1;
+        Array.prototype.inArray = function (value) {
+            var i;
+            for (i=0; i<this.length;i++){
+                if(this[i]===value){
+                    return true;
+                }
+            } return false;
+        }
+        if (highlighter.inArray(index) && index==0){
+            source_pre_highlight.push("<b>");
+            source_pre_highlight.push(word);
+        } else if (highlighter.inArray(index)){
+            if(highlighter.inArray(checker_begin1) || highlighter.inArray(checker_begin2) || highlighter.inArray(checker_begin3) || highlighter.inArray(checker_begin4)){
+                source_pre_highlight.push(word);
+            } else {
+                source_pre_highlight.push("<b>");
+                source_pre_highlight.push(word);
+            }
+        } else {
+            if(highlighter.inArray(checker_begin4)) {
+                if (highlighter.inArray(checker_begin3)) {
+                    source_pre_highlight.push(word);
+                } else if (highlighter.inArray(checker_begin2)) {
+                    source_pre_highlight.push(word);
+                } else if (highlighter.inArray(checker_begin1)) {
+                    source_pre_highlight.push(word);
+                } else {source_pre_highlight.push(word); source_pre_highlight.push("</b>");}
+                 
+            } else {source_pre_highlight.push(word);}
+            
+        }
+        
+    });
+    var repeats_5 = source_pre_highlight.join(' ');
+
     var summary_length = input_array.length;
     var original_length = source_array.length;
     var percentage = 0;
