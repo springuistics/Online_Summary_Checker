@@ -1,37 +1,51 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link href="summary.css" rel="stylesheet" type="text/css">
+    <!--Uses style W3css style sheet; you can replace with framework of your choice-->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
-<body onload="Initialize()">
-    <div class="headers">
-        <h1>Pathways to Academic English Practice</h1>
-        <h1>Practice Saying Hello: </h1>
-        <h3>Select a passage or enter your own.</h3>
+    <!--Requires dumbNLP.js, but this can be replaced with other NLP or LLM models or interpreters-->
+    <script src="dumbNLP.js"></script>
+    <!--Calls paragraph.js which currenty is stored in the same folder-->
+    <script src="summary.js"></script>
+<body>
+    <div class="w3-container w3-content">
+        <div class="headers">
+                <h1 id="subtitle">Interactive Summarizing Practice</h1>
+        </div>
     </div>
-    <div class="main_stuff">
-        <div class="Drop-Down_Box">
-        
+<div class="w3-container">
+    <div class="w3-half w3-center" style="background-color: aliceblue;">
+        <br>
+            <div class="Drop-Down_Box">
+                <select id="passage_select" onchange="GetPassage()">
+                    <option value="default">What do you want to summarize today?</option>
+                    <option value="Passage1">Worksheet Passage 1: Horses</option>
+                    <option value="Passage2">Worksheet Passage 2: Intermodal Containers</option>
+                    <option value="Custom">Enter My Own Text</option>
+                </select>
+                <br>
+            </div>
             <br>
-            <select id="passage_select" onchange="GetPassage()">
-                <option value="default">What do you want to summarize today?</option>
-                <option value="Passage1">Worksheet Passage 1: Horses</option>
-                <option value="Passage2">Worksheet Passage 2: Intermodal Containers</option>
-                <option value="Custom">Enter My Own Text</option>
-            </select>
-        </div>
-        <br>
-        <div class="source" id="source_id">
-        <p style="text-align:left; font-size: 14px" id="source_text">Put words here.</p>
-        <br>
-        </div>
-        <br>
-        <textarea id="summary_text" rows="20" cols="70" placeholder="Type your summary here. &#10 &#10Your summary should be about 25~35% of the original passage.&#10 &#10Use the tips in Chapter 4 of Pathway to Academic English 3rd Edition when writing your summary."></textarea>
-        <br>
-        <button class="button_class" id="check_button" onclick="Check_Now()">Check Your Summary</button>
-        <br>
+            <div class="source" id="source_id" style="width: 80%">
+                <p class="st_intro" style="color:purple">Source Text:</p>
+                <p style="text-align:left; font-size: 14px; margin-left: 20px;" id="source_text">First, select the text you'd like to summarize.</p>
+                <br>
+            </div>
     </div>
-    <div class="white"></div>
+    <div class="w3-half w3-purple w3-center">
+        <div class="writing" style="margin:auto; text-align:center">
+            <p class="st_intro" style="color:white">Your Summary:</p>
+            <textarea id="summary_text" style="margin: 3%; width:90%; height:400px" placeholder="Type your summary here. &#10 &#10Your summary should be about 25~35% of the original passage.&#10 &#10It should not use any 5-word repeats and minimal 3-word repeats"></textarea>
+            <br>
+            <a href="#alltheresults"><button class="w3-button w3-round w3-green" id="check_button" onclick="Check_Now()">Check Your Summary</button></a>
+            </div>
+            <br>
+        </div>
+    </div>
+</div>
+
+<div class="w3-white w3-center"></div>
     <div class="results_class" id="alltheresults" style="display:none">
         <h2 style="text-align:center; color: crimson">Advice: </h2>
         <h3 id="results_length" style="text-align:center">Length</h3>
@@ -47,12 +61,76 @@
             <canvas id="myChart" style="width:100%; max-width:700px; text-align: center; margin:auto"></canvas>
         </div>
         <p id="repeats_advice"></p>
-        <h2 style="text-align:center; color:crimson">Repeated 5-word Chunks</h2>
+        <h2 style="text-align:center; color:crimson">Repeated 3-word Chunks</h2>
         <p id="repeats_text"></p>
     </div>
-    <script type="text/javascript" src="summary.js"></script>
+</div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 </body>
-
-
 </html>
+<!--Some additional stylings-->
+<style>
+.losGraph{
+        width:100%; max-width:700px; max-height: 400px; text-align: center; margin:auto;
+}
+.headers {
+    text-align: center;
+}
+.white {
+    margin: auto;
+    margin-top: 10px;
+}
+.main_stuff {
+    border: solid 5px rgba(0, 0, 0, 0.884);
+    background-color: rgb(199, 169, 199);
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    margin-top: 50px;
+}
+.main_stuff .Drop-Down_Box {
+    font-weight: bold;
+    height: 40px;
+    font-size: 16px;
+
+}
+
+.main_stuff .source {
+    border: solid 2px rgba(0, 0, 0, 0.884);
+    background-color: aliceblue;
+    text-align: center;
+    width: 65%;
+    margin-top:20px;
+    margin-bottom:20px;
+    padding: 10px;
+    margin: auto;
+}
+
+.main_stuff .button_class {
+    border: 4px solid rgb(0, 0, 0);
+    background-color: rgb(252, 182, 182);
+    font-weight: bold;
+    width: 250px;
+    height: 30px;
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.results_class {
+    border: solid 3px rgba(0, 0, 0, 0.884);
+    background-color: rgba(168, 190, 250, 0.884);
+    text-align: left;
+    width: 75%;
+    margin-top: 20px;
+    margin:auto;
+    padding: 10px;
+}
+
+.visual {
+    border: solid 1px black;
+    text-align: center;
+    margin: auto;
+    
+}
+</style>
