@@ -1,7 +1,7 @@
 # Online_Summary_Checker
 Simple web-based appli designed to check how much of a source text is used in a summary and give advice to students.
 
-It currently requires dumbNLP.js, which can be obtained from the creator, Ryan Spring, or pulled from his website (springsenglish.online).
+It currently requires dumbNLP.js, which can be obtained from the creator, Ryan Spring, or pulled from his website (springsenglish.online). A live version demo can be found at: https://springsenglish.online/summary/summary.html
 
 This code was created specifically for the Tohoku University English curriculum, with chapter 4 of the textbook "Pathways to Academic English" in mind.
 
