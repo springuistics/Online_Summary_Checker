@@ -8,5 +8,6 @@ This code was created specifically for the Tohoku University English curriculum,
 It can be used and modified by others freely, but comes with NO warranty whatsoever. Use at your own discretion. 
 
 If you will use this appli and report it in research, please cite:
-Spring, R., & Chico, S. (2024). ??????
+
+Spring, R., & Chico, S. (2024). The impact of notetaking peer feedback, and automated feedback on summary writing: A study in the Japanese EFL context. International Journal of English for Academic Purposes,
 
